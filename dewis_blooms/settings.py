@@ -1,3 +1,6 @@
+import os
+
+
 """
 Django settings for dewis_blooms project.
 
@@ -27,6 +30,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net', '127.0.0.1', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net',
+    'https://*.gitpod.io'
+]
 
 
 # Application definition
@@ -38,6 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # Required for django-allauth
+
+     # Other Django apps    
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
 
 MIDDLEWARE = [
@@ -48,7 +61,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Default backend
+    'allauth.account.auth_backends.AuthenticationBackend',  # Allauth for email login
+)
+
+
+SITE_ID = 1
 
 ROOT_URLCONF = 'dewis_blooms.urls'
 
@@ -60,7 +82,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                'django.template.context_processors.request', #required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -115,6 +137,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -124,3 +147,16 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+'django.template.context_processors.request',  # Required by allauth
+
+
+# django-allauth configurations
+ACCOUNT_AUTHENTICATION_METHOD = 'username'  # Can also be 'email' or 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # 'optional' or 'none' are also options
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False  # Whether users must enter email twice during signup
+ACCOUNT_LOGOUT_ON_GET = True  # Logs out the user if they visit /logout/
+LOGIN_REDIRECT_URL = '/'
+# Email settings for development
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
