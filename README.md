@@ -1,131 +1,251 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+### Dewi's Blooms - Florist E-commerce Project
+###### Code Institute / Full-Stack Development / Milestone Project
+------------
 
-Welcome Ashwinkarthik Selveraj,
+[View Live Project Here](#)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+As part of this project for **Full-Stack Development**, we are building **Dewi's Blooms**, a florist website that allows users to browse a variety of floral products, manage accounts, save special occasions for family and friends, and make purchases using a secure payment system powered by **Stripe**.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+This project is designed to offer users an easy, enjoyable experience while buying flowers, setting reminders for special dates like birthdays and anniversaries, and getting personalized recommendations based on preferences. The aim is to create a responsive, user-friendly platform that integrates **Bootstrap** for styling, **Django** for backend functionality, and **django-allauth** for user authentication.
 
-## Gitpod Reminders
+![Screenshot](#)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## **Index - Table of Contents**
+------------
 
-`python3 -m http.server`
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
-
-### Connecting your Mongo database
-
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**June 18, 2024,** Add Mongo back into template
-
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
-
-**May 28 2024:** Fix Mongo and Links installs
-
-**April 26 2024:** Update node version to 16
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
++ [User Experience (UX)](#-user-experience-ux)
+    * [User Stories](#user-stories)
+        - [First Time Visitor Goals](#a-first-time-visitor-goals)
+        - [Returning Visitor Goals](#b-returning-visitor-goals)
+        - [Frequent User Goals](#c-frequent-user-goals)       
++ [UX Planes](#ux-planes)
+    * [Strategy](#strategy)
+        - [Project Goals](#project-goals) 
+        - [Customer Goals](#customer-goals)
+        - [Company Goals](#company-goals)
+        - [Future Implementations](#future-implementations)
+    * [Scope](#scope)
+    * [Structure](#structure)
+    * [Skeleton](#skeleton)     
+    * [Surface](#surface)
+        - [Colour Scheme](#colour-scheme)
+        - [Typography](#typography)
+        - [Imagery](#imagery)
++ [Features](#features)
+    * [Homepage](#homepage)
+    * [Shop Page](#shop-page)
+    * [Shopping Cart](#shopping-cart)
+    * [Checkout](#checkout)
+    * [User Account](#user-account)
+    * [Special Dates & Reminders](#special-dates-reminders)      
++ [Technologies Used](#technologies-used)
+    * [Languages Used](#languages-used)
+    * [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
++ [Testing](#testing)
+    * [Validator Testing Results](#validator-testing-results)
+    * [Browser Compatibility](#browser-compatibility)
++ [Deployment](#deployment)
++ [Credits](#credits)
+    * [Content](#content)
+    * [Code](#code)
+    * [Media](#media)
++ [Gratitude](#gratitude)
 
 ---
 
-Happy coding!
+## **User Experience (UX)**
+------------
+
+### **User Stories**
+
+1. **As a/an user/shopper** (the type of user)
+2. **I want to be able to...** (the functionality the user desires)
+3. **So that I can...** (the benefit or reason the user wants the feature)
+
+| **App Function**                   | **As a/an user/shopper**       | **I want to be able to...**                                 | **So that I can...**                                        |
+|-------------------------------------|--------------------------------|--------------------------------------------------------------|-------------------------------------------------------------|
+| **1. Viewing and Navigation**       | Shopper                        | Browse flowers and floral arrangements                       | See the available products for purchase                     |
+|                                     | Shopper                        | View detailed product pages                                  | Learn more about each product, including price and details   |
+|                                     | Shopper                        | Navigate between categories (e.g., bouquets, single flowers)  | Easily find the type of flowers I’m looking for              |
+|                                     | Shopper                        | See featured products on the homepage                        | Quickly find popular or seasonal products                   |
+|                                     | Shopper                        | Use a main navigation menu to move between sections (shop, cart, etc.) | Easily access different parts of the site                   |
+|                                     | Shopper                        | View a responsive layout on mobile and desktop               | Have a seamless experience no matter which device I use      |
+| **2. Registration and User Accounts** | Shopper                        | Register for an account                                      | Save my information for faster future purchases              |
+|                                     | Shopper                        | Log in to my account                                         | Access my saved preferences, orders, and contact dates       |
+|                                     | Shopper                        | Save friends' and family members’ special dates (e.g., birthdays, anniversaries) | Get reminders to send gifts for important occasions          |
+|                                     | Shopper                        | Manage my profile (e.g., update address, email, password)    | Keep my information up to date                               |
+|                                     | Shopper                        | View my past orders                                          | Easily reorder items for recurring gifts                    |
+|                                     | Shopper                        | Log out of my account                                        | Ensure my account is secure                                 |
+| **3. Sorting and Searching**        | Shopper                        | Filter products by category (e.g., bouquets, arrangements)   | Quickly find products that match my preferences              |
+|                                     | Shopper                        | Search for products using keywords                           | Locate a specific flower or arrangement                      |
+|                                     | Shopper                        | Sort products by price (low to high, high to low)            | Find items within my budget                                 |
+|                                     | Shopper                        | Sort products by occasion (e.g., Valentine’s Day, birthday)  | Choose products relevant to the event I'm shopping for       |
+|                                     | Shopper                        | Sort by availability (in stock, out of stock)                | See only the products I can order immediately                |
+|                                     | Shopper                        | Sort by color or flower type                                 | Find items in specific colors or types for a personalized gift|
+| **4. Purchasing and Checkout**      | Shopper                        | Add products to a shopping cart                              | Save items I’m interested in purchasing                      |
+|                                     | Shopper                        | View my shopping cart before checkout                        | Review my order before completing the purchase               |
+|                                     | Shopper                        | Select a delivery date during checkout                       | Schedule deliveries for special occasions in advance         |
+|                                     | Shopper                        | Apply discount codes at checkout                             | Save money with promotions or coupons                       |
+|                                     | Shopper                        | Enter shipping and billing information during checkout       | Provide the necessary details for my order to be processed   |
+|                                     | Shopper                        | Pay for my order securely using Stripe                       | Complete my purchase with confidence that my payment is safe |
+|                                     | Shopper                        | Receive a confirmation email after ordering                  | Know that my order has been successfully placed              |
+|                                     | Shopper                        | Save my payment information for future purchases             | Speed up the checkout process on future orders               |
+| **5. Notifications and Reminders**  | Shopper                        | Receive reminder emails for special dates                    | Get notified before important dates like birthdays or holidays|
+|                                     | Shopper                        | Get promotional emails for holidays (e.g., Valentine’s, Christmas) | Take advantage of special offers on flowers for major events |
+|                                     | Shopper                        | Get a reminder when I have abandoned my shopping cart        | Complete my purchase if I forgot to check out                |
+
+---
+
+### Summary of User Stories
+
+- **Viewing and Navigation** focuses on user interaction with the product catalog, ensuring ease of access to various sections of the site and product details.
+- **Registration and User Accounts** enables users to register, log in, and manage their profiles, orders, and important dates for personalized experiences.
+- **Sorting and Searching** helps users quickly find products based on specific criteria like price, category, or availability.
+- **Purchasing and Checkout** ensures that the user can add products to their cart, select a delivery date, and pay securely using Stripe.
+- **Notifications and Reminders** enhances user experience by sending emails for upcoming occasions and special promotions.
+ 
+
+- #### A. First Time Visitor Goals
+    1. As a first-time visitor, I want to easily browse through different floral products.
+    2. As a first-time visitor, I want to understand how to add items to my cart and complete a purchase.
+    3. As a first-time visitor, I want to be able to register for an account and receive special offers or reminders for occasions.
+    4. As a first-time visitor, I want to navigate a clean, visually appealing layout, ensuring that all features are accessible.
+    5. As a first-time visitor, I want the site to load quickly and work smoothly on my device.
+
+- #### B. Returning Visitor Goals
+    1. As a returning visitor, I want to log into my account and view my saved special dates (e.g., birthdays, anniversaries).
+    2. As a returning visitor, I want to quickly reorder my favorite flowers from past purchases.
+    3. As a returning visitor, I want to see any promotions or new products.
+    4. As a returning visitor, I want to manage my personal details (e.g., update my address or preferences).
+
+- #### C. Frequent User Goals
+    1. As a frequent user, I want reminders for upcoming birthdays or anniversaries so that I don’t miss any special occasions.
+    2. As a frequent user, I want to store preferences for specific friends and family members so I can quickly choose the right flowers for them.
+    3. As a frequent user, I want to track my order history and see delivery status.
+
+---
+
+## **UX Planes**
+------------
+
+- ### **Strategy**
+    + #### Project Goals
+        The primary goal of **Dewi's Blooms** is to provide a user-friendly platform for browsing, purchasing, and sending flowers for various occasions. The project focuses on seamless navigation, ease of use, and personalized experiences for users. 
+    + #### Customer Goals
+        - Allow users to browse and purchase flowers easily.
+        - Provide an account system where users can save personal information and special dates.
+        - Offer reminders and product recommendations based on user preferences.
+    + #### Company Goals
+        - Establish a robust online presence for the florist.
+        - Increase sales by offering targeted promotions around special events (e.g., Valentine's Day, Mother’s Day).
+        - Maintain customer engagement with email reminders and user accounts.
+    + #### Future Implementations
+        - Introduce a flower subscription service.
+        - Offer gift cards.
+        - Add social sharing features for users to recommend products to friends.
+
+- ### **Scope**
+    - The website will provide the following functionalities:
+        * User-friendly product browsing with filter and search options.
+        * Secure payment system using **Stripe**.
+        * User accounts with personalized settings for managing special dates.
+        * Reminders and promotions for specific occasions.
+
+- ### **Structure**
+    - The structure of **Dewi's Blooms** follows a logical flow:
+        * **Homepage**: Highlights featured products and provides access to all major site sections.
+        * **Shop Page**: Lists all products with filters for easy navigation.
+        * **Account Page**: Allows users to manage their information and special dates.
+        * **Checkout Page**: Secure checkout with Stripe integration.
+
+- ### **Surface**
+    + #### Colour Scheme
+        - Soft pastel tones, complemented by green and floral accents, will evoke a sense of freshness and calmness.
+    + #### Typography
+        - Font choices include **Lora** and **Montserrat**, chosen for their readability and elegance. Standard web-safe fonts like **Arial** will serve as fallbacks.
+    + #### Imagery
+        - High-quality images of flowers and floral arrangements will play a key role in creating an inviting atmosphere.
+
+---
+
+## **Features**
+------------
+
+- ### Homepage
+    - Displays featured products, quick navigation links, and a clean, welcoming layout.
+    
+- ### Shop Page
+    - Allows users to browse through all available flowers and products, filter by category (e.g., roses, bouquets), and sort by price.
+    
+- ### Shopping Cart
+    - Users can review their selected products, update quantities, and proceed to checkout.
+
+- ### Checkout
+    - Secure checkout page with Stripe integration for handling payments. Users can enter shipping information and select delivery dates.
+
+- ### User Account
+    - Allows users to register and log in using **django-allauth**. Users can view their order history, manage personal information, and save preferences.
+
+- ### Special Dates & Reminders
+    - Users can save special dates (e.g., birthdays, anniversaries) and get email reminders ahead of those dates, suggesting products based on their saved preferences.
+
+---
+
+## **Technologies Used**
+------------
+- ### **Languages Used**
+    * **HTML5**
+    * **CSS3**
+    * **JavaScript**
+    * **Python3** (Backend using Django)
+  
+- ### **Frameworks, Libraries, and Programs Used**
+    * **Django**: Backend framework to manage user authentication, database interactions, and page routing.
+    * **django-allauth**: Used for user registration, login, and account management.
+    * **Stripe**: For secure payments.
+    * **Bootstrap5**: For responsive design and easy-to-use UI components.
+
+---
+
+## **Testing**
+------------
++ ### Validator Testing Results
+    - All HTML and CSS files were validated using the W3C Validator to ensure code quality.
+  
++ ### Browser Compatibility
+    - The website has been tested on various browsers (Chrome, Firefox, Safari) and devices (desktop, tablet, mobile) for responsiveness and usability.
+
+---
+
+## **Deployment**
+------------
++ The project is deployed using **Heroku**.
++ Instructions for deploying and cloning the project:
+    - Clone the repository from GitHub.
+    - Set up a virtual environment.
+    - Install required dependencies from `requirements.txt`.
+    - Set up environment variables for **Stripe** and **django-allauth**.
+    - Deploy to **Heroku** or similar platforms.
+
+---
+
+## **Credits**
+------------
++ ### **Content**
+    - All written content is original and tailored for the **Dewi's Blooms** project.
+
++ ### **Code**
+    - Custom code for the backend was written using **Django**. Tutorials and documentation were referenced from **Django** and **Stripe** official sites.
+
++ ### **Media**
+    - All images used for product listings are either sourced from the business or licensed for use.
+
+---
+
+## **Gratitude**
+------------
+I would like to thank **Code Institute** for their guidance in developing this project. Special thanks to mentors and peers for their invaluable feedback and support throughout the project.
+
+--- 
+
+This README has been tailored to reflect the unique goals and structure of **Dewi's Blooms**, a full-stack project combining **Django**, **Stripe**, **Bootstrap**, and **django-allauth**.
