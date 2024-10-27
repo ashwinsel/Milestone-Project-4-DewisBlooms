@@ -72,6 +72,18 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
+# Email settings for development
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# django-allauth configurations
+ACCOUNT_AUTHENTICATION_METHOD = 'username'  # Can also be 'email' or 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # 'optional' or 'none' are also options
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # Whether users must enter email twice during signup
+LOGIN_URL = '/accounts/login/'
+ACCOUNT_LOGOUT_ON_GET = True  # Logs out the user if they visit /logout/
+LOGIN_REDIRECT_URL = '/success'
+
 ROOT_URLCONF = 'dewis_blooms.urls'
 
 TEMPLATES = [
@@ -99,7 +111,7 @@ WSGI_APPLICATION = 'dewis_blooms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -150,13 +162,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 'django.template.context_processors.request',  # Required by allauth
 
-
-# django-allauth configurations
-ACCOUNT_AUTHENTICATION_METHOD = 'username'  # Can also be 'email' or 'username_email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # 'optional' or 'none' are also options
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False  # Whether users must enter email twice during signup
-ACCOUNT_LOGOUT_ON_GET = True  # Logs out the user if they visit /logout/
-LOGIN_REDIRECT_URL = '/'
-# Email settings for development
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
