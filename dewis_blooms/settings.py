@@ -82,7 +82,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'  # 'optional' or 'none' are also option
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True  # Whether users must enter email twice during signup
 LOGIN_URL = '/accounts/login/'
 ACCOUNT_LOGOUT_ON_GET = True  # Logs out the user if they visit /logout/
-LOGIN_REDIRECT_URL = '/success'
+LOGIN_REDIRECT_URL = '/'
 
 ROOT_URLCONF = 'dewis_blooms.urls'
 
