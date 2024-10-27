@@ -15,7 +15,8 @@
         {% block extratitle %}{% endblock %}
     </title>
     
-    <!-- Bootstrap CSS -->
+    <!-- Google Fonts and Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-123456" crossorigin="anonymous">
 
     <!-- Core CSS or Additional Stylesheets -->
@@ -23,8 +24,59 @@
     
     <!-- Extra CSS -->
     {% block extracss %}{% endblock %}
+
+    <style>
+        /* Logo Styling */
+        .logo-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #2c3e50; /* Adjust to suit your theme */
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Main Page Header -->
+    <header class="bg-light py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Text Logo -->
+            <div>
+                <a href="{% url 'homepage' %}" class="logo-text">Dewi's Blooms</a>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="flex-grow-1 mx-3">
+                <form action="{% url 'search' %}" method="get" class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="query">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- User Authentication Links -->
+            <div>
+                {% if user.is_authenticated %}
+                    <!-- Dropdown for Authenticated Users -->
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'account' %}">Account</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <!-- Login and Register Links for Guests -->
+                    <a href="{% url 'account_login' %}" class="me-3">Login</a>
+                    <a href="{% url 'account_signup' %}">Register</a>
+                {% endif %}
+                <a href="{% url 'shopping_bag' %}" class="ms-3">
+                    <i class="bi bi-bag"></i> Bag
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -67,14 +119,12 @@
     <!-- Page Header Block -->
     <div class="container mt-4">
         {% block pageheader %}
-        <!-- Additional page-specific header content can go here -->
         {% endblock %}
     </div>
 
     <!-- Main Content Area -->
     <div class="container mt-4">
         {% block content %}
-        <!-- Page-specific content will go here -->
         {% endblock %}
     </div>
 

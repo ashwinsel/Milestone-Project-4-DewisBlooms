@@ -1,8 +1,26 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock %}
+{% block extratitle %} - Home{% endblock %}
+
+{% block pageheader %}
+    <h1>Welcome to Dewi's Blooms!</h1>
+    <p>Your go-to flower shop for every occasion.</p>
+    {% if user.is_authenticated %}
+        <p>Welcome back, {{ user.username }}!</p>
+    {% else %}
+        <p><a href="{% url 'account_signup' %}">Sign up</a> to access exclusive offers and reminders!</p>
+    {% endif %}
+{% endblock %}
 
 {% block content %}
-    <h1>Welcome to Dewi's Blooms!</h1>
-    <p>This is the homepage of Dewi's Blooms. Browse our flowers and arrangements for all occasions.</p>
+<div class="container mt-4">
+    <!-- Featured Products Section -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 class="text-center">Featured Products</h2>
+        </div>
+        <!-- Product Cards -->
+        <!-- Repeat similar blocks as needed -->
+    </div>
+</div>
 {% endblock %}
