@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Dewi's Blooms{% endblock %}</title>
+    
+    <!-- Core Meta Tags -->
+    {% block meta %}{% endblock %}
+    
+    <!-- Extra Meta Tags -->
+    {% block extrameta %}{% endblock %}
+    
+    <title>
+        {% block title %}Dewi's Blooms{% endblock %}
+        {% block extratitle %}{% endblock %}
+    </title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-123456" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <!-- Bootstrap JavaScript Bundle with Popper -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-abcdef" crossorigin="anonymous"></script>
-
+    <!-- Core CSS or Additional Stylesheets -->
+    {% block corecss %}{% endblock %}
+    
+    <!-- Extra CSS -->
+    {% block extracss %}{% endblock %}
 </head>
 <body>
     <!-- Navbar -->
@@ -41,6 +51,26 @@
         </div>
     </nav>
 
+    <!-- Message Container for Django Messages -->
+    <div class="container mt-2">
+        {% if messages %}
+            <div class="message-container">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} mt-2" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Page Header Block -->
+    <div class="container mt-4">
+        {% block pageheader %}
+        <!-- Additional page-specific header content can go here -->
+        {% endblock %}
+    </div>
+
     <!-- Main Content Area -->
     <div class="container mt-4">
         {% block content %}
@@ -48,5 +78,16 @@
         {% endblock %}
     </div>
 
+    <!-- Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-abcdef" crossorigin="anonymous"></script>
+    
+    <!-- Additional Core JavaScript -->
+    {% block corejs %}{% endblock %}
+
+    <!-- Extra JavaScript -->
+    {% block extrajs %}{% endblock %}
+
+    <!-- Post Load JavaScript -->
+    {% block postloadjs %}{% endblock %}
 </body>
 </html>
