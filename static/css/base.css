@@ -1,0 +1,62 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hero Section Styling */
+.hero-section {
+    background: url('/media/homepage_background.jpg') no-repeat center center/cover;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Dark Overlay for Better Contrast */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Categories Styling */
+.category-card, .product-card {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img, .product-card img {
+    border-radius: 5px;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+
+/* Section Headings */
+h2 {
+    color: #4CAF50;
+    font-weight: bold;
+    text-align: center;
+}

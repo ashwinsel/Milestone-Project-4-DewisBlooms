@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),  # Includes the home app’s URLs
     path('accounts/', include('allauth.urls')),  # Authentication URLs
+    path('shop/', include('shop.urls')),
 ]
