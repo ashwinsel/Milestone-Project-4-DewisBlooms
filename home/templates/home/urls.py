@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='homepage'),  # Sets the homepage route
+    path('search/', views.search, name='search'),
 ]

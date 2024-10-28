@@ -9,3 +9,9 @@ def index(request):
     """ A view to return the index page """
 
     return render(request, 'home/index.html')
+
+
+def search(request):
+    # Placeholder logic for search functionality delete later
+
+    return render(request, 'home/search_results.html')
