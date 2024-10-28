@@ -1,54 +1,26 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block extratitle %} - Home{% endblock %}
+
+{% block pageheader %}
+    <h1>Welcome to Dewi's Blooms!</h1>
+    <p>Your go-to flower shop for every occasion.</p>
+    {% if user.is_authenticated %}
+        <p>Welcome back, {{ user.username }}!</p>
+    {% else %}
+        <p><a href="{% url 'account_signup' %}">Sign up</a> to access exclusive offers and reminders!</p>
+    {% endif %}
+{% endblock %}
 
 {% block content %}
-    <!-- Hero Section -->
-    <div class="hero-section text-center text-white">
-        <h1 class="display-4">Welcome to Dewi's Blooms!</h1>
-        <p>Your go-to flower shop for every occasion.</p>
-        <a href="{% url 'shop' %}" class="btn btn-primary mt-3">Shop Now</a>
-    </div>
-
-    <!-- Categories Section -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Shop Categories</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/summer.jpg' %}" class="img-fluid" alt="Summer Flowers">
-                    <h3 class="mt-2">Summer</h3>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/local.jpg' %}" class="img-fluid" alt="Local Specials">
-                    <h3 class="mt-2">Local Specials</h3>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/sympathy.jpg' %}" class="img-fluid" alt="Sympathy Flowers">
-                    <h3 class="mt-2">Sympathy</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div class="container mt-4">
     <!-- Featured Products Section -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Seasonal Flowers</h2>
-        <div class="row">
-            {% for product in featured_products %}
-            <div class="col-md-3 mb-4">
-                <div class="card product-card">
-                    <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">${{ product.price|floatformat:2 }}</p>
-                        <a href="{% url 'product_detail' product.id %}" class="btn btn-success">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
+    <div class="row mt-4">
+        <div class="col-12">
+            <h2 class="text-center">Featured Products</h2>
         </div>
+        <!-- Product Cards -->
+        <!-- Repeat similar blocks as needed -->
     </div>
+</div>
 {% endblock %}
