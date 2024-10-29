@@ -1,41 +1,62 @@
-<!-- with a collapsible mobile-friendly top header -->
 <div class="d-block d-lg-none py-2 border-bottom">
     <ul class="nav justify-content-between">
-        <!-- Search Button -->
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#mobileSearchForm" role="button" aria-expanded="false" aria-controls="mobileSearchForm">
-                <i class="fas fa-search"></i> Search
+        <!-- Search Button with Dropdown -->
+        <li class="list-inline-item">
+            <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <i class="fas fa-search fa-lg"></i>
+                    <p class="my-0">Search</p>
+                </div>
             </a>
-            <div class="collapse" id="mobileSearchForm">
-                <form action="{% url 'search' %}" method="get" class="p-2">
-                    <input class="form-control" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="query">
-                    <button class="btn btn-outline-primary mt-2" type="submit">Search</button>
+            <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+                <form action="{% url 'search' %}" method="get" class="form">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="query">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </li>
 
         <!-- My Account Dropdown -->
-        <li class="list-inline-item">
-            <div class="dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="mobileAccountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user"></i> My Account
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="mobileAccountDropdown">
-                    {% if user.is_authenticated %}
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Account</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                    {% else %}
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+        <li class="list-inline-item dropdown">
+            <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                    <i class="fas fa-user fa-lg"></i>
+                    <p class="my-0">My Account</p>
+                </div>
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if user.is_authenticated %}
+                    {% if user.is_superuser %}
+                        <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
                     {% endif %}
-                </ul>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">My Profile</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
             </div>
         </li>
 
         <!-- Shopping Bag Link -->
         <li class="list-inline-item">
-            <a class="nav-link" href="{% url 'shopping_bag' %}">
-                <i class="fas fa-shopping-bag"></i> Bag <span class="bag-total">£{{ grand_total|default:"0.00"|floatformat:2 }}</span>
+            <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'shopping_bag' %}">
+                <div class="text-center">
+                    <i class="fas fa-shopping-bag fa-lg"></i>
+                    <p class="my-0">
+                        {% if grand_total %}
+                            £{{ grand_total|floatformat:2 }}
+                        {% else %}
+                            £0.00
+                        {% endif %}
+                    </p>
+                </div>
             </a>
         </li>
     </ul>
