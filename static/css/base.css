@@ -1,62 +1,132 @@
-html {
+html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     background: url('/media/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
-    color: #555;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Styling */
+.header {
+    padding: 10px 0;
+    background-color: #ff5733;
+}
+
+.logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+/* Delivery Banner */
+#delivery-banner {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Add styling for search-form to control width */
+.search-form {
+    max-width: 100%;
+    width: 60%; /* Adjust width as necessary */
+}
+
+/* Search Bar Container */
+.search-bar-container {
+    max-width: 500px;
+}
+
+/* Account Links Styling */
+.account-links a, .account-links .dropdown-toggle {
+    color: #ff5733;
+    font-weight: bold;
+    margin-left: 15px;
 }
 
 /* Hero Section Styling */
 .hero-section {
-    background: url('/media/homepage_background.jpg') no-repeat center center/cover;
-    height: 80vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: url('/media/homepage_background.jpg') center/cover no-repeat;
     color: #fff;
-}
-
-/* Dark Overlay for Better Contrast */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Categories Styling */
-.category-card, .product-card {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 5px;
     text-align: center;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
 }
 
-.category-card img, .product-card img {
-    border-radius: 5px;
-    max-height: 200px;
-    object-fit: cover;
+.hero-section .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 87, 51, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Dancing Script', cursive;
 }
 
-
-/* Section Headings */
-h2 {
-    color: #4CAF50;
+.hero-section h1 {
+    font-size: 2.5em;
     font-weight: bold;
-    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Category Card Styling */
+.category-card {
+    background-color: #ffb84d;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+}
+
+.category-card img {
+    max-width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.category-card h3 {
+    font-size: 1.2em;
+    color: #ff5733;
+}
+
+/* Centered Navbar */
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff5733;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    /* Adjust mobile top header links */
+    .d-lg-none {
+        display: block !important;
+    }
+
+    /* Hide desktop-only elements on mobile */
+    .d-lg-block {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-center {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .header-left, .header-right {
+        flex-basis: 100%;
+        justify-content: center;
+    }
 }

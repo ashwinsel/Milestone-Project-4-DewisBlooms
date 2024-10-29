@@ -3,52 +3,18 @@
 
 {% block extratitle %} - Home{% endblock %}
 
-{% block pageheader %}
-    <h1>Welcome to Dewi's Blooms!</h1>
-    <p>Your go-to flower shop for every occasion.</p>
+{% block content %}
+<div class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+    <div class="hero-content">
+        <h1 class="display-4 fw-bold">Welcome to Dewi's Blooms!</h1>
+        <p class="lead">Welsh local flowers for every occasion</p>
+        <a href="{% url 'shop' %}" class="btn btn-primary mt-3">Shop Now</a>
+    </div>
     {% if user.is_authenticated %}
         <p>Welcome back, {{ user.username }}!</p>
     {% else %}
         <p><a href="{% url 'account_signup' %}">Sign up</a> to access exclusive offers and reminders!</p>
-    {% endif %}
-{% endblock %}
-
-{% block content %}
-    <!-- Hero Section -->
-    <div class="hero-section text-center text-white d-flex align-items-center justify-content-center">
-        <div class="hero-content">
-            <h1 class="display-4 fw-bold">Welcome to Dewi's Blooms!</h1>
-            <p class="lead">Welsh local flowers for every occasion</p>
-            <a href="{% url 'shop' %}" class="btn btn-primary mt-3">Shop Now</a>
-        </div>        
-    </div>
-    <!-- Categories Section -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Shop Categories</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/summer_card.jpg' %}" class="img-fluid" alt="Summer Flowers">
-                    <h3 class="mt-2">Summer Flowers</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/wedding_card.jpg' %}" class="img-fluid" alt="Summer Flowers">
-                    <h3 class="mt-2">Wedding Flowers</h3>
-                </div>
-            </div>
-        </div>
-        <div class="row"></div>
-            <div class="col-md-4 mb-4">
-                <div class="category-card">
-                    <img src="{% static 'images/sympathy_card.jpg' %}" class="img-fluid" alt="Summer Flowers">
-                    <h3 class="mt-2">Sympathy Flowers</h3>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% endif %}        
+</div>
 
 {% endblock %}

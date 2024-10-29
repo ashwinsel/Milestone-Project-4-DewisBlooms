@@ -1,157 +1,106 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Core Meta Tags -->
-    {% block meta %}{% endblock %}
-    
-    <!-- Extra Meta Tags -->
-    {% block extrameta %}{% endblock %}
-    
-    <title>
-        {% block title %}Dewi's Blooms{% endblock %}
-        {% block extratitle %}{% endblock %}
-    </title>
-    
-    <!-- Google Fonts and Bootstrap CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-123456" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static '/css/base.css' %}">
+  <head>
+    {% block meta %}
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% endblock %}
 
-    <!-- Fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    {% block corecss %}
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% endblock %}
 
-
-    <!-- Core CSS or Additional Stylesheets -->
-    {% block corecss %}{% endblock %}
-    
-    <!-- Extra CSS -->
-    {% block extracss %}{% endblock %}
-
-    <style>
-        /* Logo Styling */
-        .logo-text {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            color: #2c3e50; /* Adjust to suit your theme */
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-    <!-- Main Page Header -->
-    <header class="bg-light py-3 container-fluid fixed-top">
-        <div class="container d-flex justify-content-between align-items-center">
-            <!-- Text Logo -->
-            <div>
-                <a href="{% url 'homepage' %}" class="logo-text">Dewi's Blooms</a>
-            </div>
-
-            <!-- Search Bar -->
-            <div class="flex-grow-1 mx-3">
-                <form action="{% url 'search' %}" method="get" class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="query">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-
-            <!-- User Authentication Links -->
-            <div>
-                {% if user.is_authenticated %}
-                    <!-- Dropdown for Authenticated Users -->
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            Profile
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Account</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
-                        </ul>
-                    </div>
-                {% else %}
-                    <!-- Login and Register Links for Guests -->
-                    <a href="{% url 'account_login' %}" class="me-3">Login</a>
-                    <a href="{% url 'account_signup' %}">Register</a>
-                {% endif %}
-                <!-- Shopping Bag Link -->
-                <li class="nav-item">
-                    <a href="{% url 'shopping_bag' %}" class="nav-link {% if grand_total %}text-success fw-bold{% else %}text-muted{% endif %}">
-                        <i class="fas fa-shopping-bag"></i>
-                        Bag
-                        <span class="bag-total">
-                            ${{ grand_total|default:"0.00"|floatformat:2 }}
-                        </span>
-                    </a>
-                </li>
-
-            </div>
+    <title>Dewi's Blooms {% block extra_title %}{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="container-fluid fixed-top">
+      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <!-- Logo -->
+        <div class="col-12 col-lg-4 my-auto py-1 text-center text-lg-left">
+          <a href="{% url 'homepage' %}" class="nav-link main-logo-link">
+            <h2 class="logo-font text-black my-0"><strong>Dewi's</strong> Blooms</h2>
+          </a>
         </div>
+        <!-- Search Bar -->
+        <div class="col-12 col-lg-4 my-auto py-1">
+          <form method="GET" action="{% url 'search' %}">
+            <div class="input-group w-100">
+              <input class="form-control border border-black rounded-0" type="text" name="query" placeholder="Search our site">
+              <div class="input-group-append">
+                <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Account and Shopping Bag Links -->
+        <div class="col-12 col-lg-4 my-auto py-1 text-center text-lg-right">
+          <ul class="list-inline list-unstyled my-0">
+            <li class="list-inline-item dropdown">
+              <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                  <i class="fas fa-user fa-lg"></i>
+                  <p class="my-0">My Account</p>
+                </div>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if user.is_authenticated %}
+                  <a href="{% url 'account_login' %}" class="dropdown-item">My Profile</a>
+                  <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                  <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                  <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <a href="{% url 'shopping_bag' %}" class="nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
+                <div class="text-center">
+                  <i class="fas fa-shopping-bag fa-lg"></i>
+                  <p class="my-0">${{ grand_total|default:"0.00"|floatformat:2 }}</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Delivery Banner -->
+      <div id="delivery-banner" class="row text-center">
+        <div class="col bg-black text-white">
+          <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold|default:"50.00"|floatformat:2 }}!</h4>
+        </div>
+      </div>
+      <!-- Main Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white w-100">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="main-nav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">All Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Special occasion</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Sympathy Flowers</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Special Offers</a></li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light pt-lg-2 d-none d-lg-flex">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'homepage' %}">Dewi's Blooms</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'homepage' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <main class="container mt-5 pt-5">
+      {% block content %}{% endblock %}
+    </main>
 
-    <!-- Message Container for Django Messages -->
-    <div class="container mt-2">
-        {% if messages %}
-            <div class="message-container">
-                {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }} mt-2" role="alert">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            </div>
-        {% endif %}
-    </div>
-
-    <!-- Page Header Block -->
-    <div class="container mt-4">
-        {% block pageheader %}
-        {% endblock %}
-    </div>
-
-    <!-- Main Content Area -->
-    <div class="container mt-4">
-        {% block content %}
-        {% endblock %}
-    </div>
-
-    <!-- Core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js" integrity="sha384-abcdef" crossorigin="anonymous"></script>
-    
-    <!-- Additional Core JavaScript -->
-    {% block corejs %}{% endblock %}
-
-    <!-- Extra JavaScript -->
-    {% block extrajs %}{% endblock %}
-
-    <!-- Post Load JavaScript -->
-    {% block postloadjs %}{% endblock %}
-</body>
+    {% block corejs %}
+      <script src="https://kit.fontawesome.com/4863a75fd6.js" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    {% endblock %}
+  </body>
 </html>
