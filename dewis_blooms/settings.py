@@ -1,5 +1,9 @@
 import os
+import environ
 
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 """
 Django settings for dewis_blooms project.
@@ -53,6 +57,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'shop',
+    'products',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -171,3 +177,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 'django.template.context_processors.request',  # Required by allauth
 
+# AWS S3 Configuration
+
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = os.getenv("AWS_S3_REGION_NAME")
+
+
+
+# Storage for media files
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = f'https://{AWS_STORAGE_BUCKET_NAME}.s3.{AWS_S3_REGION_NAME}.amazonaws.com/'

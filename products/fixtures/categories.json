@@ -1,0 +1,34 @@
+[
+    {
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "wedding",
+            "friendly_name": "Wedding Flowers"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "sympathy",
+            "friendly_name": "Sympathy Flowers"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "seasonal",
+            "friendly_name": "Seasonal Flowers"
+        }
+    }
+    {
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "life milestones",
+            "friendly_name": "Birthdays and Anniversaries"
+        }
+    }
+]

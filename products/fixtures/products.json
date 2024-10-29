@@ -1,0 +1,38 @@
+[
+    {
+        "model": "products.product",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "sku": "SKU001",
+            "name": "Classic Wedding Bouquet",
+            "description": "A beautiful bouquet perfect for weddings.",
+            "price": "49.99",
+            "image_url": "#"
+        }
+    },
+    {
+        "model": ".product",
+        "pk": 2,
+        "fields": {
+            "category": 2,
+            "sku": "SKU002",
+            "name": "Sympathy Lilies",
+            "description": "A simple and elegant arrangement for moments of sympathy.",
+            "price": "29.99",
+            "image_url": "#"
+        }
+    },
+    {
+        "model": "your_app_name.product",
+        "pk": 3,
+        "fields": {
+            "category": 3,
+            "sku": "SKU003",
+            "name": "Spring Daffodils",
+            "description": "A bright and cheerful selection of seasonal daffodils.",
+            "price": "15.99",
+            "image_url": "#"
+        }
+    }
+]
