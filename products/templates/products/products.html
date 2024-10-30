@@ -12,6 +12,9 @@
             <hr style="width: 50%; margin: auto;">
         </div>
     </div>
+{% if search_term %}
+    <p class="text-muted text-center display-4">Results for "{{ search_term }}"</p>
+{% endif %}
 
     <!-- Product Display Section -->
     <div class="row justify-content-center">
