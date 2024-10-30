@@ -82,6 +82,12 @@ body {
 
 
 /* Responsive Adjustments */
+@media (max-width: 575.98px) {
+    body {
+        padding-top: 116px;
+    }
+}
+
 @media (max-width: 991.98px) {
     /* Adjust mobile top header links */
     .d-lg-none {

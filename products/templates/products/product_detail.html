@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-overlay"></div>
+
+<div class="container my-5">
+    <!-- Product Detail Section -->
+    <div class="row justify-content-center">
+        <!-- Product Image -->
+        <div class="col-md-6 col-lg-5 mb-4 mt-5">
+            <div class="text-center">
+                {% if product.image_url %}
+                    <a href="{{ product.image_url }}" target="_blank">
+                        <img src="{{ product.image_url }}" class="img-fluid shadow rounded" alt="{{ product.name }}">
+                    </a>
+                {% else %}
+                    <img src="{% static 'images/default_image.jpg' %}" class="img-fluid shadow rounded" alt="{{ product.name }}">
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="col-md-6 col-lg-5 mt-5">
+            <h2 class="font-weight-bold text-dark">{{ product.name }}</h2>
+            <hr class="my-3">
+            <p class="h4 font-weight-bold text-true-black">Price: £{{ product.price }}</p>
+            {% if product.rating %}
+                <p class="text-true-black">Rating: <strong>{{ product.rating }}</strong></p>
+            {% endif %}
+            <p class="h4 font-weight-bold text-true-black mt-3">{{ product.description }}</p>
+
+            
+            <button class="btn btn-primary btn-lg mt-4">
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+<div class="page-overlay"></div>  <!-- White background overlay -->
+
 <div class="container-fluid my-5">
     <!-- Page Title Section -->
     <div class="row mb-4 text-center">
@@ -17,13 +19,17 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
                 <!-- Bootstrap Card for each product -->
                 <div class="card h-100 text-center shadow-sm">
-                    {% if product.image_url %}
-                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                    {% else %}
-                        <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
-                    {% endif %}
+                    <a href="{% url 'product_detail' product.id %}">
+                        {% if product.image_url %}
+                            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                        {% else %}
+                            <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                        {% endif %}
+                    </a>
                     <div class="card-body">
-                        <h5 class="card-title">{{ product.name }}</h5>
+                        <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                        </a>
                     </div>
                     <div class="card-footer">
                         <p class="text-muted">£{{ product.price }}</p>
