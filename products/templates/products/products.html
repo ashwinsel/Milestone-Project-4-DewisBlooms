@@ -3,7 +3,6 @@
 
 {% block content %}
 <div class="container-fluid my-5">
-    <!-- Page Title Section -->
     <div class="row mb-4 text-center">
         <div class="col">
             <h1 class="logo-font">Products</h1>
@@ -13,53 +12,53 @@
 
     <!-- Bootstrap Accordion for Category-wise Product Display -->
     <div class="accordion" id="productAccordion">
-        <!-- Occasions Category -->
-        <div class="card">
-            <div class="card-header" id="headingOccasions">
-                <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOccasions" aria-expanded="true" aria-controls="collapseOccasions">
-                        Occasions Flowers
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseOccasions" class="collapse show" aria-labelledby="headingOccasions" data-parent="#productAccordion">
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        {% for product in products %}
-                            {% if product.category.name == 'occasions' %}
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                    <div class="card h-100 text-center shadow-sm">
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            {% if product.image_url %}
-                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                                            {% else %}
-                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
-                                            {% endif %}
-                                        </a>
-                                        <div class="card-body">
-                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
-                                                <h5 class="card-title">{{ product.name }}</h5>
+        {% for category in categories %}
+            <div class="card">
+                <div class="card-header" id="heading{{ category.name }}">
+                    <h2 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ category.name }}" aria-expanded="true" aria-controls="collapse{{ category.name }}">
+                            {{ category.name|title }} Flowers
+                        </button>
+                    </h2>
+                </div>
+                <div id="collapse{{ category.name }}" class="collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ category.name }}" data-parent="#productAccordion">
+                    <div class="card-body">
+                        <div class="row justify-content-center">
+                            {% for product in products %}
+                                {% if product.category == category %}
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                        <div class="card h-100 text-center shadow-sm">
+                                            <a href="{% url 'product_detail' product.id %}">
+                                                {% if product.image_url %}
+                                                    <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                                                {% else %}
+                                                    <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                                                {% endif %}
                                             </a>
-                                        </div>
-                                        <div class="card-footer">
-                                            <p class="text-muted">£{{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <p class="text-warning">Rating: {{ product.rating }}</p>
-                                            {% endif %}
-                                            <form method="POST" action="{% url 'add_to_cart' product.id %}">
-                                                {% csrf_token %}
-                                                <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
-                                            </form>
+                                            <div class="card-body">
+                                                <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                                                    <h5 class="card-title">{{ product.name }}</h5>
+                                                </a>
+                                            </div>
+                                            <div class="card-footer">
+                                                <p class="text-muted">£{{ product.price }}</p>
+                                                {% if product.rating %}
+                                                    <p class="text-warning">Rating: {{ product.rating }}</p>
+                                                {% endif %}
+                                                <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Additional categories here... -->
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
