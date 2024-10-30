@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="page-overlay"></div>  <!-- White background overlay -->
-
+<div></div>
 <div class="container-fluid my-5">
     <!-- Page Title Section -->
     <div class="row mb-4 text-center">
@@ -12,10 +11,9 @@
             <hr style="width: 50%; margin: auto;">
         </div>
     </div>
-{% if search_term %}
-    <p class="text-muted text-center display-4">Results for "{{ search_term }}"</p>
+    {% if search_term %}
+        <p class="text-muted text-center display-4">Results for "{{ search_term }}"</p>
 {% endif %}
-
     <!-- Product Display Section -->
     <div class="row justify-content-center">
         {% for product in products %}
@@ -65,7 +63,7 @@
                 </div>
             {% endif %}
         {% empty %}
-            <p class="text-center">No products found in this category.</p>
+            <p class="text-center font-weight-bold h4">No products found in this category.</p>
         {% endfor %}
     </div>
 </div>
