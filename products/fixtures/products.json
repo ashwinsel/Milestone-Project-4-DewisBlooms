@@ -9,7 +9,7 @@
             "description": "Beautiful anniversary bouquet.",
             "price": "45.00",
             "rating": 4.6,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_0.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/anniversary_bouquet_0.jpg"
         }
     },
     {
@@ -22,7 +22,7 @@
             "description": "Lovely bouquet to celebrate anniversaries.",
             "price": "50.00",
             "rating": 4,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_1.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/anniversary_bouquet_1.jpg"
         }
     },
     {
@@ -35,7 +35,7 @@
             "description": "Elegant bouquet for a memorable anniversary.",
             "price": "55.00",
             "rating": 5,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_2.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/anniversary_bouquet_2.jpg"
         }
     },
     {
@@ -48,7 +48,7 @@
             "description": "Bright and cheerful bouquet for birthdays.",
             "price": "30.00",
             "rating": 4.2,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_0.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/birthday_bouquet_0.jpg"
         }
     },
     {
@@ -61,7 +61,7 @@
             "description": "Colorful bouquet perfect for birthdays.",
             "price": "35.00",
             "rating": 4.8,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_1.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/birthday_bouquet_1.jpg"
         }
     },
     {
@@ -74,7 +74,7 @@
             "description": "Elegant birthday bouquet to brighten up the day.",
             "price": "40.00",
             "rating": 4.9,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_2.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/birthday_bouquet_2.jpg"
         }
     },
     {
@@ -87,7 +87,7 @@
             "description": "A delicate bouquet for moments of sympathy.",
             "price": "25.00",
             "rating": 4.7,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_0.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/sympathy_bouquet_0.jpg"
         }
     },
     {
@@ -100,7 +100,7 @@
             "description": "A respectful bouquet for offering condolences.",
             "price": "28.00",
             "rating": 4.4,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_1.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/sympathy_bouquet_1.jpg"
         }
     },
     {
@@ -113,7 +113,7 @@
             "description": "Graceful bouquet for sympathy occasions.",
             "price": "32.00",
             "rating": 4.1,
-            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_2.jpg"
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/sympathy_bouquet_2.jpg"
         }
     },
         {
@@ -126,7 +126,7 @@
                 "description": "An elegant bouquet for wedding celebrations.",
                 "price": "60.00",
                 "rating": 3.8,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_0.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/wedding_bouquet_0.jpg"
             }
         },
         {
@@ -139,7 +139,7 @@
                 "description": "Classic white roses for a beautiful wedding.",
                 "price": "65.00",
                 "rating": 4.6,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/wedding_bouquet_1.jpg"
             }
         },
         {
@@ -152,7 +152,7 @@
                 "description": "Delicate arrangement of roses and lilies for a special day.",
                 "price": "70.00",
                 "rating": 4.4,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/wedding_bouquet_2.jpg"
             }
         },
         {
@@ -165,7 +165,7 @@
                 "description": "Beautiful arrangement of wedding flowers.",
                 "price": "75.00",
                 "rating": 3.6,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_3.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions/wedding_bouquet_3.jpg"
             }
         },
         {
@@ -191,7 +191,7 @@
                 "description": "Lovely seasonal flowers for springtime.",
                 "price": "42.00",
                 "rating": 5,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /spring_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/spring_bouquet_1.jpg"
             }
         },
         {
@@ -204,7 +204,7 @@
                 "description": "A cheerful arrangement for spring celebrations.",
                 "price": "43.00",
                 "rating": 4.8,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /spring_bouquet-2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/spring_bouquet-2.jpg"
             }
         },
         {
@@ -217,7 +217,7 @@
                 "description": "Bright summer flowers for warm days.",
                 "price": "45.00",
                 "rating": 5,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_0.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/summer_bouquet_0.jpg"
             }
         },
         {
@@ -230,7 +230,7 @@
                 "description": "Beautiful blooms to capture the essence of summer.",
                 "price": "46.00",
                 "rating": 4.5,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/summer_bouquet_1.jpg"
             }
         },
         {
@@ -243,7 +243,7 @@
                 "description": "A vibrant collection of summer flowers.",
                 "price": "47.00",
                 "rating": 4.2,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/summer_bouquet_2.jpg"
             }
         },
         {
@@ -256,7 +256,7 @@
                 "description": "Elegant winter flowers for a cozy season.",
                 "price": "48.00",
                 "rating": 3.8,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_0.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/winter_bouquet_0.jpg"
             }
         },
         {
@@ -269,7 +269,7 @@
                 "description": "Charming bouquet for the winter season.",
                 "price": "49.00",
                 "rating": 4.6,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/winter_bouquet_1.jpg"
             }
         },
         {
@@ -282,7 +282,7 @@
                 "description": "A lovely bouquet for the cold winter months.",
                 "price": "50.00",
                 "rating": 4.4,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/winter_bouquet_2.jpg"
             }
         },
         {
@@ -295,7 +295,7 @@
                 "description": "Festive bouquet for winter celebrations.",
                 "price": "52.00",
                 "rating": 2.6,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_3.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/winter_bouquet_3.jpg"
             }
         },
         {
@@ -321,7 +321,7 @@
                 "description": "Charming bouquet of pink carnations.",
                 "price": "36.00",
                 "rating": 4.1,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /carnations_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/carnations_bouquet_1.jpg"
             }
         },
         {
@@ -334,7 +334,7 @@
                 "description": "Elegant bouquet with delicate carnations.",
                 "price": "37.00",
                 "rating": 3.2,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /carnations_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/carnations_bouquet_2.jpg"
             }
         },
         {
@@ -347,7 +347,7 @@
                 "description": "Bright and bold dahlias.",
                 "price": "40.00",
                 "rating": 5,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_0.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/dahlia_bouquet_0.jpg"
             }
         },
         {
@@ -360,7 +360,7 @@
                 "description": "Elegant dahlias in a stunning arrangement.",
                 "price": "42.00",
                 "rating": 4.8,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/dahlia_bouquet_1.jpg"
             }
         },
         {
@@ -373,7 +373,7 @@
                 "description": "Bright bouquet of dahlias for any occasion.",
                 "price": "43.00",
                 "rating": 4.6,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/dahlia_bouquet_2.jpg"
             }
         },
         {
@@ -386,7 +386,7 @@
                 "description": "Simple and cheerful daisy bouquet.",
                 "price": "25.00",
                 "rating": 5,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_0.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/daisy_bouquet_0.jpg"
             }
         },
         {
@@ -399,7 +399,7 @@
                 "description": "Fresh daisy arrangement.",
                 "price": "26.00",
                 "rating": 4.8,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_1.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/daisy_bouquet_1.jpg"
             }
         },
         {
@@ -412,7 +412,7 @@
                 "description": "Lovely daisy bouquet for all occasions.",
                 "price": "27.00",
                 "rating": 4.9,
-                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_2.jpg"
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/daisy_bouquet_2.jpg"
             }
         }
 

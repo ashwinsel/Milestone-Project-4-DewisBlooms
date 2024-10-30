@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid my-5">
+    <!-- Page Title Section -->
+    <div class="row mb-4 text-center">
+        <div class="col">
+            <h1 class="logo-font">Products</h1>
+            <hr style="width: 50%; margin: auto;">
+        </div>
+    </div>
+
+    <!-- Product Display Section -->
+    <div class="row justify-content-center">
+        {% for product in products %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <!-- Bootstrap Card for each product -->
+                <div class="card h-100 text-center shadow-sm">
+                    {% if product.image_url %}
+                        <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                    {% else %}
+                        <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-muted">£{{ product.price }}</p>
+                        {% if product.rating %}
+                            <p class="text-warning">Rating: {{ product.rating }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Horizontal Rule Conditions -->
+            {% if forloop.counter|divisibleby:"1" %}
+                <div class="col-12 d-block d-sm-none mb-4">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:"2" %}
+                <div class="col-12 d-none d-sm-block d-md-none mb-4">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:"3" %}
+                <div class="col-12 d-none d-md-block d-lg-none mb-4">
+                    <hr>
+                </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:"4" %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-4">
+                    <hr>
+                </div>
+            {% endif %}
+        {% empty %}
+            <p class="text-center">No products found in this category.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

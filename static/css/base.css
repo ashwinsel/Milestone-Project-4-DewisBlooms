@@ -76,6 +76,10 @@ body {
     color: #ff5733;
 }
 
+.mt-5, .my-5 {
+    margin-top: 4rem !important;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 991.98px) {
@@ -87,6 +91,10 @@ body {
     /* Hide desktop-only elements on mobile */
     .d-lg-block {
         display: none !important;
+    }
+
+    .mt-5, .my-5 {
+        margin-top: 8rem !important;
     }
 }
 
@@ -113,6 +121,10 @@ body {
     .hero-content {
         padding: 15px;
         max-width: 90%;
+    }
+
+    .mt-5, .my-5 {
+        margin-top: 8rem !important;
     }
 }
 
