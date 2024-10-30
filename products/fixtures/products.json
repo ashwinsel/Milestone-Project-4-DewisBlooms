@@ -5,34 +5,416 @@
         "fields": {
             "category": 1,
             "sku": "SKU001",
-            "name": "Classic Wedding Bouquet",
-            "description": "A beautiful bouquet perfect for weddings.",
-            "price": "49.99",
-            "image_url": "#"
+            "name": "Anniversary Bouquet 0",
+            "description": "Beautiful anniversary bouquet.",
+            "price": "45.00",
+            "rating": 4.6,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_0.jpg"
         }
     },
     {
-        "model": ".product",
+        "model": "products.product",
         "pk": 2,
         "fields": {
-            "category": 2,
+            "category": 1,
             "sku": "SKU002",
-            "name": "Sympathy Lilies",
-            "description": "A simple and elegant arrangement for moments of sympathy.",
-            "price": "29.99",
-            "image_url": "#"
+            "name": "Anniversary Bouquet 1",
+            "description": "Lovely bouquet to celebrate anniversaries.",
+            "price": "50.00",
+            "rating": 4,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_1.jpg"
         }
     },
     {
-        "model": "your_app_name.product",
+        "model": "products.product",
         "pk": 3,
         "fields": {
-            "category": 3,
+            "category": 1,
             "sku": "SKU003",
-            "name": "Spring Daffodils",
-            "description": "A bright and cheerful selection of seasonal daffodils.",
-            "price": "15.99",
-            "image_url": "#"
+            "name": "Anniversary Bouquet 2",
+            "description": "Elegant bouquet for a memorable anniversary.",
+            "price": "55.00",
+            "rating": 5,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /anniversary_bouquet_2.jpg"
         }
-    }
+    },
+    {
+        "model": "products.product",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "sku": "SKU004",
+            "name": "Birthday Bouquet 0",
+            "description": "Bright and cheerful bouquet for birthdays.",
+            "price": "30.00",
+            "rating": 4.2,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_0.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 5,
+        "fields": {
+            "category": 1,
+            "sku": "SKU005",
+            "name": "Birthday Bouquet 1",
+            "description": "Colorful bouquet perfect for birthdays.",
+            "price": "35.00",
+            "rating": 4.8,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 6,
+        "fields": {
+            "category": 1,
+            "sku": "SKU006",
+            "name": "Birthday Bouquet 2",
+            "description": "Elegant birthday bouquet to brighten up the day.",
+            "price": "40.00",
+            "rating": 4.9,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /birthday_bouquet_2.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 7,
+        "fields": {
+            "category": 1,
+            "sku": "SKU007",
+            "name": "Sympathy Bouquet 0",
+            "description": "A delicate bouquet for moments of sympathy.",
+            "price": "25.00",
+            "rating": 4.7,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_0.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 8,
+        "fields": {
+            "category": 1,
+            "sku": "SKU008",
+            "name": "Sympathy Bouquet 1",
+            "description": "A respectful bouquet for offering condolences.",
+            "price": "28.00",
+            "rating": 4.4,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_1.jpg"
+        }
+    },
+    {
+        "model": "products.product",
+        "pk": 9,
+        "fields": {
+            "category": 1,
+            "sku": "SKU009",
+            "name": "Sympathy Bouquet 2",
+            "description": "Graceful bouquet for sympathy occasions.",
+            "price": "32.00",
+            "rating": 4.1,
+            "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /sympathy_bouquet_2.jpg"
+        }
+    },
+        {
+            "model": "products.product",
+            "pk": 10,
+            "fields": {
+                "category": 1,
+                "sku": "SKU010",
+                "name": "Wedding Bouquet 0",
+                "description": "An elegant bouquet for wedding celebrations.",
+                "price": "60.00",
+                "rating": 3.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 11,
+            "fields": {
+                "category": 1,
+                "sku": "SKU011",
+                "name": "Wedding Bouquet 1",
+                "description": "Classic white roses for a beautiful wedding.",
+                "price": "65.00",
+                "rating": 4.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 12,
+            "fields": {
+                "category": 1,
+                "sku": "SKU012",
+                "name": "Wedding Bouquet 2",
+                "description": "Delicate arrangement of roses and lilies for a special day.",
+                "price": "70.00",
+                "rating": 4.4,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 13,
+            "fields": {
+                "category": 1,
+                "sku": "SKU013",
+                "name": "Wedding Bouquet 3",
+                "description": "Beautiful arrangement of wedding flowers.",
+                "price": "75.00",
+                "rating": 3.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/occasions /wedding_bouquet_3.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 14,
+            "fields": {
+                "category": 2,
+                "sku": "SKU014",
+                "name": "Spring Bouquet 0",
+                "description": "Bright and colorful bouquet perfect for spring.",
+                "price": "40.00",
+                "rating": 3.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal/spring_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 15,
+            "fields": {
+                "category": 2,
+                "sku": "SKU015",
+                "name": "Spring Bouquet 1",
+                "description": "Lovely seasonal flowers for springtime.",
+                "price": "42.00",
+                "rating": 5,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /spring_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 16,
+            "fields": {
+                "category": 2,
+                "sku": "SKU016",
+                "name": "Spring Bouquet 2",
+                "description": "A cheerful arrangement for spring celebrations.",
+                "price": "43.00",
+                "rating": 4.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /spring_bouquet-2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 17,
+            "fields": {
+                "category": 2,
+                "sku": "SKU017",
+                "name": "Summer Bouquet 0",
+                "description": "Bright summer flowers for warm days.",
+                "price": "45.00",
+                "rating": 5,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 18,
+            "fields": {
+                "category": 2,
+                "sku": "SKU018",
+                "name": "Summer Bouquet 1",
+                "description": "Beautiful blooms to capture the essence of summer.",
+                "price": "46.00",
+                "rating": 4.5,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 19,
+            "fields": {
+                "category": 2,
+                "sku": "SKU019",
+                "name": "Summer Bouquet 2",
+                "description": "A vibrant collection of summer flowers.",
+                "price": "47.00",
+                "rating": 4.2,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /summer_bouquet_2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 20,
+            "fields": {
+                "category": 2,
+                "sku": "SKU020",
+                "name": "Winter Bouquet 0",
+                "description": "Elegant winter flowers for a cozy season.",
+                "price": "48.00",
+                "rating": 3.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 21,
+            "fields": {
+                "category": 2,
+                "sku": "SKU021",
+                "name": "Winter Bouquet 1",
+                "description": "Charming bouquet for the winter season.",
+                "price": "49.00",
+                "rating": 4.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 22,
+            "fields": {
+                "category": 2,
+                "sku": "SKU022",
+                "name": "Winter Bouquet 2",
+                "description": "A lovely bouquet for the cold winter months.",
+                "price": "50.00",
+                "rating": 4.4,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 23,
+            "fields": {
+                "category": 2,
+                "sku": "SKU023",
+                "name": "Winter Bouquet 3",
+                "description": "Festive bouquet for winter celebrations.",
+                "price": "52.00",
+                "rating": 2.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/seasonal /winter_bouquet_3.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 24,
+            "fields": {
+                "category": 1,
+                "sku": "SKU024",
+                "name": "Carnations Bouquet 0",
+                "description": "A classic arrangement of carnations.",
+                "price": "35.00",
+                "rating": 4.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types/carnations_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 25,
+            "fields": {
+                "category": 1,
+                "sku": "SKU025",
+                "name": "Carnations Bouquet 1",
+                "description": "Charming bouquet of pink carnations.",
+                "price": "36.00",
+                "rating": 4.1,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /carnations_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 26,
+            "fields": {
+                "category": 1,
+                "sku": "SKU026",
+                "name": "Carnations Bouquet 2",
+                "description": "Elegant bouquet with delicate carnations.",
+                "price": "37.00",
+                "rating": 3.2,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /carnations_bouquet_2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 27,
+            "fields": {
+                "category": 1,
+                "sku": "SKU027",
+                "name": "Dahlia Bouquet 0",
+                "description": "Bright and bold dahlias.",
+                "price": "40.00",
+                "rating": 5,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 28,
+            "fields": {
+                "category": 1,
+                "sku": "SKU028",
+                "name": "Dahlia Bouquet 1",
+                "description": "Elegant dahlias in a stunning arrangement.",
+                "price": "42.00",
+                "rating": 4.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 29,
+            "fields": {
+                "category": 1,
+                "sku": "SKU029",
+                "name": "Dahlia Bouquet 2",
+                "description": "Bright bouquet of dahlias for any occasion.",
+                "price": "43.00",
+                "rating": 4.6,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /dahlia_bouquet_2.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 30,
+            "fields": {
+                "category": 1,
+                "sku": "SKU030",
+                "name": "Daisy Bouquet 0",
+                "description": "Simple and cheerful daisy bouquet.",
+                "price": "25.00",
+                "rating": 5,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_0.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 31,
+            "fields": {
+                "category": 1,
+                "sku": "SKU031",
+                "name": "Daisy Bouquet 1",
+                "description": "Fresh daisy arrangement.",
+                "price": "26.00",
+                "rating": 4.8,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_1.jpg"
+            }
+        },
+        {
+            "model": "products.product",
+            "pk": 32,
+            "fields": {
+                "category": 1,
+                "sku": "SKU032",
+                "name": "Daisy Bouquet 2",
+                "description": "Lovely daisy bouquet for all occasions.",
+                "price": "27.00",
+                "rating": 4.9,
+                "image_url": "https://florist-shop-images.s3.eu-north-1.amazonaws.com/types /daisy_bouquet_2.jpg"
+            }
+        }
+
+    
 ]

@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('home.urls')),  # Includes the home app’s URLs
     path('accounts/', include('allauth.urls')),  # Authentication URLs
     path('shop/', include('shop.urls')),
+    path('products/', include('products.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

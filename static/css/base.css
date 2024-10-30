@@ -7,7 +7,7 @@ html, body {
 }
 
 body {
-    background: url('/media/homepage_background.jpg') no-repeat center center fixed;
+    background: url('../images/homepage_background.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -50,7 +50,7 @@ body {
 
 /* Hero Section Styling */
 .hero-section {
-    background: url(/media/homepage_background.jpg) center center / cover no-repeat;    
+    background: url('../images/homepage_background.jpg') center center / cover no-repeat;    
     height: 63vh;
     position: relative;
     margin-top: 163px;  
