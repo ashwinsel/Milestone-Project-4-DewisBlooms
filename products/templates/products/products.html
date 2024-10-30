@@ -46,6 +46,10 @@
                                             {% if product.rating %}
                                                 <p class="text-warning">Rating: {{ product.rating }}</p>
                                             {% endif %}
+                                            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -55,92 +59,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- Seasonal Category -->
-        <div class="card">
-            <div class="card-header" id="headingSeasonal">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeasonal" aria-expanded="false" aria-controls="collapseSeasonal">
-                        Seasonal Flowers
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseSeasonal" class="collapse" aria-labelledby="headingSeasonal" data-parent="#productAccordion">
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        {% for product in products %}
-                            {% if product.category.name == 'seasonal' %}
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                    <div class="card h-100 text-center shadow-sm">
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            {% if product.image_url %}
-                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                                            {% else %}
-                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
-                                            {% endif %}
-                                        </a>
-                                        <div class="card-body">
-                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
-                                                <h5 class="card-title">{{ product.name }}</h5>
-                                            </a>
-                                        </div>
-                                        <div class="card-footer">
-                                            <p class="text-muted">£{{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <p class="text-warning">Rating: {{ product.rating }}</p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Flower Type Category -->
-        <div class="card">
-            <div class="card-header" id="headingType">
-                <h2 class="mb-0">
-                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
-                        Flower Type
-                    </button>
-                </h2>
-            </div>
-            <div id="collapseType" class="collapse" aria-labelledby="headingType" data-parent="#productAccordion">
-                <div class="card-body">
-                    <div class="row justify-content-center">
-                        {% for product in products %}
-                            {% if product.category.name == 'type' %}
-                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                                    <div class="card h-100 text-center shadow-sm">
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            {% if product.image_url %}
-                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                                            {% else %}
-                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
-                                            {% endif %}
-                                        </a>
-                                        <div class="card-body">
-                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
-                                                <h5 class="card-title">{{ product.name }}</h5>
-                                            </a>
-                                        </div>
-                                        <div class="card-footer">
-                                            <p class="text-muted">£{{ product.price }}</p>
-                                            {% if product.rating %}
-                                                <p class="text-warning">Rating: {{ product.rating }}</p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Additional categories here... -->
     </div>
 </div>
 {% endblock %}

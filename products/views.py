@@ -48,3 +48,28 @@ def product_detail(request, product_id):
         'product': product,
     }
     return render(request, 'products/product_detail.html', context)
+
+
+def add_to_cart(request, product_id):
+    """Add a product to the shopping cart and update the total."""
+    product = get_object_or_404(Product, pk=product_id)
+    cart = request.session.get('cart', {})
+    cart_total = request.session.get('cart_total', 0)
+
+    # Add the product to the cart
+    if product_id in cart:
+        cart[product_id]['quantity'] += 1
+    else:
+        cart[product_id] = {
+            'name': product.name,
+            'price': float(product.price),
+            'quantity': 1,
+        }
+
+    # Update the total in the session
+    cart_total += float(product.price)
+    request.session['cart'] = cart
+    request.session['cart_total'] = cart_total
+
+    messages.success(request, f'Added {product.name} to your cart.')
+    return redirect(reverse('products'))
