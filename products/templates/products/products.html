@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<div></div>
 <div class="container-fluid my-5">
     <!-- Page Title Section -->
     <div class="row mb-4 text-center">
@@ -11,60 +10,137 @@
             <hr style="width: 50%; margin: auto;">
         </div>
     </div>
-    {% if search_term %}
-        <p class="text-muted text-center display-4">Results for "{{ search_term }}"</p>
-{% endif %}
-    <!-- Product Display Section -->
-    <div class="row justify-content-center">
-        {% for product in products %}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <!-- Bootstrap Card for each product -->
-                <div class="card h-100 text-center shadow-sm">
-                    <a href="{% url 'product_detail' product.id %}">
-                        {% if product.image_url %}
-                            <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
-                        {% else %}
-                            <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
-                        {% endif %}
-                    </a>
-                    <div class="card-body">
-                        <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                        </a>
-                    </div>
-                    <div class="card-footer">
-                        <p class="text-muted">£{{ product.price }}</p>
-                        {% if product.rating %}
-                            <p class="text-warning">Rating: {{ product.rating }}</p>
-                        {% endif %}
+
+    <!-- Bootstrap Accordion for Category-wise Product Display -->
+    <div class="accordion" id="productAccordion">
+        <!-- Occasions Category -->
+        <div class="card">
+            <div class="card-header" id="headingOccasions">
+                <h2 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOccasions" aria-expanded="true" aria-controls="collapseOccasions">
+                        Occasions Flowers
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseOccasions" class="collapse show" aria-labelledby="headingOccasions" data-parent="#productAccordion">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        {% for product in products %}
+                            {% if product.category.name == 'occasions' %}
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                    <div class="card h-100 text-center shadow-sm">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            {% if product.image_url %}
+                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                                            {% else %}
+                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                                            {% endif %}
+                                        </a>
+                                        <div class="card-body">
+                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                                                <h5 class="card-title">{{ product.name }}</h5>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="text-muted">£{{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <p class="text-warning">Rating: {{ product.rating }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Horizontal Rule Conditions -->
-            {% if forloop.counter|divisibleby:"1" %}
-                <div class="col-12 d-block d-sm-none mb-4">
-                    <hr>
+        <!-- Seasonal Category -->
+        <div class="card">
+            <div class="card-header" id="headingSeasonal">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeasonal" aria-expanded="false" aria-controls="collapseSeasonal">
+                        Seasonal Flowers
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseSeasonal" class="collapse" aria-labelledby="headingSeasonal" data-parent="#productAccordion">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        {% for product in products %}
+                            {% if product.category.name == 'seasonal' %}
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                    <div class="card h-100 text-center shadow-sm">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            {% if product.image_url %}
+                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                                            {% else %}
+                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                                            {% endif %}
+                                        </a>
+                                        <div class="card-body">
+                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                                                <h5 class="card-title">{{ product.name }}</h5>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="text-muted">£{{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <p class="text-warning">Rating: {{ product.rating }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:"2" %}
-                <div class="col-12 d-none d-sm-block d-md-none mb-4">
-                    <hr>
+            </div>
+        </div>
+
+        <!-- Flower Type Category -->
+        <div class="card">
+            <div class="card-header" id="headingType">
+                <h2 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseType" aria-expanded="false" aria-controls="collapseType">
+                        Flower Type
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseType" class="collapse" aria-labelledby="headingType" data-parent="#productAccordion">
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        {% for product in products %}
+                            {% if product.category.name == 'type' %}
+                                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                                    <div class="card h-100 text-center shadow-sm">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            {% if product.image_url %}
+                                                <img src="{{ product.image_url }}" class="card-img-top" alt="{{ product.name }}">
+                                            {% else %}
+                                                <img src="{% static 'images/default_image.jpg' %}" class="card-img-top" alt="{{ product.name }}">
+                                            {% endif %}
+                                        </a>
+                                        <div class="card-body">
+                                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                                                <h5 class="card-title">{{ product.name }}</h5>
+                                            </a>
+                                        </div>
+                                        <div class="card-footer">
+                                            <p class="text-muted">£{{ product.price }}</p>
+                                            {% if product.rating %}
+                                                <p class="text-warning">Rating: {{ product.rating }}</p>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:"3" %}
-                <div class="col-12 d-none d-md-block d-lg-none mb-4">
-                    <hr>
-                </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:"4" %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-4">
-                    <hr>
-                </div>
-            {% endif %}
-        {% empty %}
-            <p class="text-center font-weight-bold h4">No products found in this category.</p>
-        {% endfor %}
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

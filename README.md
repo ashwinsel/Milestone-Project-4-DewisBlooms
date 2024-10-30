@@ -249,3 +249,25 @@ I would like to thank **Code Institute** for their guidance in developing this p
 --- 
 
 This README has been tailored to reflect the unique goals and structure of **Dewi's Blooms**, a full-stack project combining **Django**, **Stripe**, **Bootstrap**, and **django-allauth**.
+Database Schema Structure
+Category Table
+
+Fields:
+id (Primary Key)
+name (Unique Identifier for the category, e.g., "occasions", "seasonal", "type")
+friendly_name (User-friendly name, e.g., "Occasions Flowers")
+Product Table
+
+Fields:
+product_id (Primary Key)
+sku (Stock Keeping Unit for tracking)
+category_id (Foreign Key referring to Category.id)
+name (Product name, e.g., "Anniversary Bouquet 0")
+description (Description of the product, e.g., "Beautiful anniversary bouquet.")
+price (Price of the product, e.g., "45.00")
+rating (User rating, e.g., 4.6)
+image_url (URL to the product image)
+Relationships
+
+One-to-Many: A Category can have multiple Product entries associated with it through the category_id foreign key.
+This schema allows each product to be associated with a specific category, enabling filtering by category, as well as displaying product details such as name, price, rating, and image. 

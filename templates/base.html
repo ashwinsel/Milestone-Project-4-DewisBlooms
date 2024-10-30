@@ -85,10 +85,25 @@
       </button>
       <div class="collapse navbar-collapse justify-content-center" id="main-nav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="" href="{% url 'products' %}">All Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Occasion</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Seasonal Flowers</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Specific Flowers</a></li>
+          <li class="nav-item">
+            <a class="" href="{% url 'products' %}">
+              All Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" href="{% url 'products' %}?category=occasions">
+                Occasions Flowers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="dropdown-item" href="{% url 'products' %}?category=seasonal">
+                Seasonal Flowers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="dropdown-item" href="{% url 'products' %}?category=type">
+                Flower Type
+            </a>
         </ul>
       </div>
     </nav>

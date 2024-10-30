@@ -6,26 +6,21 @@
             <a class="nav-link dropdown-toggle" href="#" id="allProductsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 All Products
             </a>
-            <ul class="dropdown-menu" aria-labelledby="allProductsDropdown">
-                <li><a class="dropdown-item" href="{% url 'products' %}">All Products</a></li>
-                <li><a class="dropdown-item" href="#">By Price</a></li>
-                <li><a class="dropdown-item" href="#">By Rating</a></li>
-                <li><a class="dropdown-item" href="#">By Category</a></li>
-            </ul>
-        </li>
-
-        <!-- Other Categories -->
+         </li>   
         <li class="nav-item">
-            <a class="nav-link" href="#">Seasonal Flowers</a>
+            <a class="dropdown-item" href="{% url 'products' %}?category=occasions">
+                Occasions Flowers
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Birthday Arrangements</a>
+            <a class="dropdown-item" href="{% url 'products' %}?category=seasonal">
+                Seasonal Flowers
+            </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Special Offers</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Sympathy Flowers</a>
-        </li>
+            <a class="dropdown-item" href="{% url 'products' %}?category=type">
+                Flower Type
+            </a>
+        </li>              
     </ul>
 </div>

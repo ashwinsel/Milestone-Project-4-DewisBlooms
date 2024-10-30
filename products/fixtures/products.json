@@ -302,7 +302,7 @@
             "model": "products.product",
             "pk": 24,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU024",
                 "name": "Carnations Bouquet 0",
                 "description": "A classic arrangement of carnations.",
@@ -315,7 +315,7 @@
             "model": "products.product",
             "pk": 25,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU025",
                 "name": "Carnations Bouquet 1",
                 "description": "Charming bouquet of pink carnations.",
@@ -328,7 +328,7 @@
             "model": "products.product",
             "pk": 26,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU026",
                 "name": "Carnations Bouquet 2",
                 "description": "Elegant bouquet with delicate carnations.",
@@ -341,7 +341,7 @@
             "model": "products.product",
             "pk": 27,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU027",
                 "name": "Dahlia Bouquet 0",
                 "description": "Bright and bold dahlias.",
@@ -354,7 +354,7 @@
             "model": "products.product",
             "pk": 28,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU028",
                 "name": "Dahlia Bouquet 1",
                 "description": "Elegant dahlias in a stunning arrangement.",
@@ -367,7 +367,7 @@
             "model": "products.product",
             "pk": 29,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU029",
                 "name": "Dahlia Bouquet 2",
                 "description": "Bright bouquet of dahlias for any occasion.",
@@ -380,7 +380,7 @@
             "model": "products.product",
             "pk": 30,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU030",
                 "name": "Daisy Bouquet 0",
                 "description": "Simple and cheerful daisy bouquet.",
@@ -393,7 +393,7 @@
             "model": "products.product",
             "pk": 31,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU031",
                 "name": "Daisy Bouquet 1",
                 "description": "Fresh daisy arrangement.",
@@ -406,7 +406,7 @@
             "model": "products.product",
             "pk": 32,
             "fields": {
-                "category": 1,
+                "category": 3,
                 "sku": "SKU032",
                 "name": "Daisy Bouquet 2",
                 "description": "Lovely daisy bouquet for all occasions.",
