@@ -1,12 +1,11 @@
 import os
 import environ
 import dj_database_url
+from pathlib import Path
 
 # Initialize environment variables
 env = environ.Env()
 environ.Env.read_env()
-
-from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',  # Added middleware for allauth
 ]
 
 AUTHENTICATION_BACKENDS = (
