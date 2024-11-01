@@ -17,13 +17,14 @@ DEBUG = env.bool("DEBUG", default=False)
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'dewis-blooms.herokuapp.com',
+    'dewis-blooms-unique-123.herokuapp.com',  # Heroku app URL
     '8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net',
-    'https://*.herokuapp.com'
+    'https://dewis-blooms-unique-123.herokuapp.com',  # Heroku app URL with HTTPS
+    'https://*.herokuapp.com'  # Allows all Heroku subdomains for CSRF
 ]
 
 # Application definition
