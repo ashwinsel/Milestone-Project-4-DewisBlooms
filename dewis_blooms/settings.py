@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net',
-    'https://dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com/',  # Heroku app URL with HTTPS
+    'https://dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com',  # Heroku app URL with HTTPS
     'https://*.herokuapp.com'  # Allows all Heroku subdomains for CSRF
 ]
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'home',
     'shop',
     'products',
-    'storages',
+    'storages',  # Django Storages app for AWS S3
 ]
 
 MIDDLEWARE = [
@@ -134,6 +134,7 @@ if not DEBUG:
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
     AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
+    AWS_S3_FILE_OVERWRITE = env.bool("AWS_S3_FILE_OVERWRITE", False)
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
     # Use S3 for file storage in production
