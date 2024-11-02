@@ -10,20 +10,20 @@ environ.Env.read_env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security Settings
-SECRET_KEY = env("SECRET_KEY", default='your-default-secret-key')  # Replace for security
+SECRET_KEY = env("SECRET_KEY")  # Removed default fallback for production security
 DEBUG = env.bool("DEBUG", default=False)
 
 # Allowed Hosts
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'dewis-blooms-unique-123.herokuapp.com',  # Heroku app URL
+    'https://dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com/',  # Heroku app URL
     '8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net',
-    'https://dewis-blooms-unique-123.herokuapp.com',  # Heroku app URL with HTTPS
+    'https://dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com/',  # Heroku app URL with HTTPS
     'https://*.herokuapp.com'  # Allows all Heroku subdomains for CSRF
 ]
 
@@ -99,7 +99,7 @@ WSGI_APPLICATION = 'dewis_blooms.wsgi.application'
 # Database Configuration (Switching from SQLite to PostgreSQL in production)
 DATABASES = {
     'default': dj_database_url.config(
-        default=env("DATABASE_URL", default='postgres://utilh44h3i6:LdtNQVOJUT2v@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/wired_blimp_cage_401071'),
+        default=env("DATABASE_URL"),
         conn_max_age=600,
         ssl_require=True
     )
@@ -120,7 +120,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-# Static and Media files configuration (for local development)
+# Static and Media files configuration for development and production
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -134,12 +134,13 @@ if not DEBUG:
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
     AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-
-    # Tell Django to use S3 for file storage in production
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
+    # Use S3 for file storage in production
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+
+    # Set URLs for static and media files hosted on S3
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
