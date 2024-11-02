@@ -4,10 +4,9 @@ import dj_database_url
 from pathlib import Path
 
 # Initialize environment variables
-env = environ.Env()
-environ.Env.read_env()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Security Settings
 SECRET_KEY = env("SECRET_KEY")  # Removed default fallback for production security
