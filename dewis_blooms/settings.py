@@ -17,7 +17,7 @@ DEBUG = env.bool("DEBUG", default=False)
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    'https://dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com/',  # Heroku app URL
+    'dewis-blooms-unique-123-b3c2c80b60fd.herokuapp.com',  # Heroku app URL
     '8000-ashwinsel-milestoneproj-gw7p0d2mufe.ws.codeinstitute-ide.net'
 ]
 
