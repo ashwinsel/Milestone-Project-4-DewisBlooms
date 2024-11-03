@@ -9,9 +9,9 @@
                 </div>
             </a>
             <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-                <form action="{% url 'products' %}" method="get" class="form">
+                <form action="{% url 'search' %}" method="get" class="form">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="query">
+                        <input class="form-control border border-black rounded-0" type="search" placeholder="Search flowers, bouquets..." aria-label="Search" name="q">
                         <div class="input-group-append">
                             <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                                 <i class="fas fa-search"></i>
@@ -46,7 +46,7 @@
 
         <!-- Shopping Bag Link -->
         <li class="list-inline-item">
-            <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'shopping_bag' %}">
+            <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'shopping_cart' %}">
                 <div class="text-center">
                     <i class="fas fa-shopping-bag fa-lg"></i>
                     <p class="my-0">

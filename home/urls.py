@@ -18,7 +18,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='homepage'),  # Sets the homepage route
-    path('search/', views.search, name='search'), # Add the search path
-    path('shopping_bag/', views.shopping_bag, name='shopping_bag'),
+    path('', views.index, name='homepage'),  # Homepage route
+    path('search/', views.search, name='search'),  # Search functionality
+    path('shopping_cart/', views.shopping_cart, name='shopping_cart'),  # Shopping bag view
 ]
