@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
+from django.db.models.functions import Lower
 from .models import Product, Category
 
 def all_products(request):
@@ -8,6 +9,8 @@ def all_products(request):
     products = Product.objects.all()
     query = request.GET.get('q', None)
     category_name = request.GET.get('category', None)
+    sort = request.GET.get('sort', None)
+    direction = request.GET.get('direction', 'asc')
     categories = Category.objects.all()
     current_categories = []
 
@@ -22,14 +25,27 @@ def all_products(request):
         queries = Q(name__icontains=query) | Q(description__icontains=query)
         products = products.filter(queries)
 
+    # Sorting functionality
+    if sort:
+        sortkey = sort
+        if sortkey == 'name':
+            products = products.annotate(lower_name=Lower('name'))
+            sortkey = 'lower_name'
+        if direction == 'desc':
+            sortkey = f'-{sortkey}'
+        products = products.order_by(sortkey)
+
+    # Construct the current sorting string for use in templates
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'products': products,
         'search_term': query,
         'categories': categories,
         'current_categories': current_categories,
+        'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
-
 
 def product_detail(request, product_id):
     """A view to display individual product details."""
@@ -38,7 +54,6 @@ def product_detail(request, product_id):
         'product': product,
     }
     return render(request, 'products/product_detail.html', context)
-
 
 def add_to_cart(request, product_id):
     """Add a product to the shopping cart."""
@@ -63,7 +78,6 @@ def add_to_cart(request, product_id):
 
     messages.success(request, f'Added {product.name} to your cart.')
     return redirect(reverse('products'))
-
 
 def shopping_cart(request):
     """A view to display the shopping cart contents."""

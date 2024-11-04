@@ -80,6 +80,35 @@ body {
     margin-top: 4rem !important;
 }
 
+.shopping-cart {
+    padding: 20px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.remove-btn, .clear-btn, .checkout-btn {
+    margin-top: 10px;
+}
+
 
 /* Responsive Adjustments */
 @media (max-width: 575.98px) {

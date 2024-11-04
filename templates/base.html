@@ -61,10 +61,11 @@
           </li>
           <!-- Cart Total in Header -->
           <li class="list-inline-item">
-            <a href="{% url 'shopping_cart' %}" class="nav-link {% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
+            <a href="{% url 'shopping_cart' %}" class="nav-link {% if request.session.cart_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
               <div class="text-center">
                 <i class="fas fa-shopping-bag fa-lg"></i>
-                <p class="my-0">£{{ grand_total|default:"0.00"|floatformat:2 }}</p>
+                <!-- Display the cart total -->
+                <p class="my-0">£{{ request.session.cart_total|default:"0.00" }}</p>
               </div>
             </a>
           </li>
@@ -91,20 +92,18 @@
               All Products
             </a>
           </li>
-          <li class="nav-item">
-            <a class="dropdown-item" href="{% url 'products' %}?category=occasions">
-                Occasions Flowers
+          <!-- Dropdown for Sorting Options -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="sortDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+              Products by
             </a>
-        </li>
-        <li class="nav-item">
-            <a class="dropdown-item" href="{% url 'products' %}?category=seasonal">
-                Seasonal Flowers
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="dropdown-item" href="{% url 'products' %}?category=type">
-                Flower Type
-            </a>
+            <div class="dropdown-menu" aria-labelledby="sortDropdown">
+              <a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=desc">Price High to Low</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=price&direction=asc">Price Low to High</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=desc">Rating High to Low</a>
+              <a class="dropdown-item" href="{% url 'products' %}?sort=rating&direction=asc">Rating Low to High</a>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>

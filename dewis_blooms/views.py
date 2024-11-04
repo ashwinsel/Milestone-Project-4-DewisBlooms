@@ -35,4 +35,7 @@ def products_view(request):
         category: Product.objects.filter(category=category)  # Group products by category
         for category in categories
     }
-    return render(request, 'products.html', {'products_by_category': products_by_category, 'categories': categories})
+    return render(request, 'products.html', {
+        'products_by_category': products_by_category,
+        'categories': categories,
+    })

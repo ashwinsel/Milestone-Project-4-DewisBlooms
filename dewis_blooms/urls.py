@@ -10,4 +10,5 @@ urlpatterns = [
     path('search/', views.search, name='search'),  # Search functionality
     path('products/', include('products.urls')),  # Products app URLs
     path('accounts/', include('allauth.urls')),  # Authentication URLs
+    path('shopping_bag/', include(('shopping_bag.urls', 'shopping_bag'), namespace='shopping_bag')),  # Shopping bag URLs
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
