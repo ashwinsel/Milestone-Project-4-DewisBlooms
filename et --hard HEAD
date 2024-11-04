@@ -1,0 +1,36 @@
+[33m3672c29[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31mheroku/main[m[33m)[m ensure all product images are of same size and are spread equally over the real estate
+[33mc63d520[m Add sorting functionality to show products by ascending or descending rating or price in base.html
+[33mf4ababe[m shopping cart functionality updated
+[33m7ea6709[m pdated settings for S3 static files
+[33m2e41ae8[m Add new migrations for products app
+[33m887f6d0[m Configured AWS S3 for static and media storage in production
+[33mf78ab3f[m Add Heroku app URL to ALLOWED_HOSTS
+[33m9ee57a0[m Update allowed hosts and middleware settings
+[33mdc4ac28[m Update ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS for Heroku
+[33m370fdae[m Add AccountMiddleware to MIDDLEWARE
+[33mc845db2[m Add gunicorn to requirements
+[33mc282487[m Prepare for Heroku deployment
+[33m14991ab[m fix bug in products page only one category showing and add card functionality added
+[33m08a770e[m add 'add to cart' button to product listing on products page
+[33m833c785[m add filter by category functionality to nav bar at top and collapsible accordian on products page to separate by category
+[33m393ead6[m add user feedback for no results and search term display in products.html
+[33m11b7225[m update views.py in products folder and amend base.html to add search functionality
+[33m25b2fc1[m Add product details functionality
+[33m18d5b85[m products page template setup
+[33mfd1cd16[m customise admin and fix url issues in products.json
+[33mf6c416b[m Configured AWS S3 with secure environment variables
+[33mbc4e67a[m fix base.css to get responsive hero section
+[33md39c3b8[m add hompage assist tempaltes in include folders and complete homapage layout
+[33m5a4d664[m edit settings.py and urls.py to wire up static and media files
+[33m03c56a7[m add background image and create shop app
+[33m955f40d[m edit homepage header and nav to basic
+[33m216b314[m add homepage header and nav bar
+[33me4d04d6[m update url configurations and wire up with urls in base.html and index.html
+[33m4ff8255[m Add header logog and user authentication form and link up to urls.py
+[33mb8f7772[m add home app and templates
+[33m6c73e16[m add allauth template and base template
+[33m8a6946e[m setup allauth
+[33me8662b1[m django administration set and all requiored backend settings added to settings.py along with views.py
+[33m0042245[m django framework installed along with inital gitignore update and settings.py update
+[33m4cb58f0[m update the README to stage the project idea and user stories and framework
+[33mf5be234[m Initial commit
