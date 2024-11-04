@@ -21,7 +21,7 @@
         </div>
 
         <!-- Product Details -->
-        <div class="col-md-6 col-lg-5 mt-5">
+        <div class="hero-content col-md-6 col-lg-5 mt-5">
             <h2 class="font-weight-bold text-dark">{{ product.name }}</h2>
             <hr class="my-3">
             <p class="h4 font-weight-bold text-true-black">Price: £{{ product.price }}</p>
@@ -42,8 +42,8 @@
                     
                     <!-- Add to Bag Button -->
                     <div class="col">
-                        <button type="submit" class="btn btn-black">Add to Bag</button>
-                        <a href="{% url 'products' %}" class="btn btn-outline-black">Keep Shopping</a>
+                        <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Bag</button>
+                        <a href="{% url 'products' %}" class="btn btn-primary btn-sm mt-2 btn btn-outline-black">Keep Shopping</a>
                     </div>
                     
                     <!-- Hidden Redirect URL -->

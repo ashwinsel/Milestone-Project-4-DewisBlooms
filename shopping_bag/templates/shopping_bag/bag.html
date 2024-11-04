@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<div class="container mb-2">
+<div class="container mb-4">
     <div class="row">
         <div class="col">
             <h2 class="logo-font mb-4">Shopping Bag</h2>
@@ -13,8 +13,68 @@
     <div class="row">
         <div class="col">
             {% if bag_items %}
-                <!-- Bag Contents Table (to be populated later) -->
-                <p>Items in your bag will display here...</p>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Details</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in bag_items %}
+                            <tr>
+                                <!-- Product Image -->
+                                <td>
+                                    <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-thumbnail" style="width: 75px;">
+                                </td>
+                                <!-- Product Name and SKU -->
+                                <td>
+                                    <strong>{{ item.product.name }}</strong><br>
+                                    SKU: {{ item.product.sku|upper }}
+                                </td>
+                                <!-- Price per Item -->
+                                <td>£{{ item.product.price }}</td>
+                                <!-- Quantity -->
+                                <td>{{ item.quantity }}</td>
+                                <!-- Subtotal directly from context processor -->
+                                <td>£{{ item.subtotal|floatformat:2 }}</td>
+                            </tr>
+                            {% endfor %}
+                            <!-- Total, Delivery, and Grand Total -->
+                            <tr>
+                                <td colspan="3"></td>
+                                <td><strong>Total:</strong></td>
+                                <td>£{{ total|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td><strong>Delivery:</strong></td>
+                                <td>£{{ delivery|floatformat:2 }}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                                <td><strong>Grand Total:</strong></td>
+                                <td>£{{ grand_total|floatformat:2 }}</td>
+                            </tr>
+                            {% if free_delivery_delta > 0 %}
+                            <tr>
+                                <td colspan="5" class="text-center text-danger">
+                                    Spend £{{ free_delivery_delta|floatformat:2 }} more for free delivery!
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Keep Shopping and Checkout Buttons -->
+                <div class="d-flex justify-content-between">
+                    <a href="{% url 'products' %}" class="btn btn-outline-primary">Keep Shopping</a>
+                    <a href="#" class="btn btn-primary">Secure Checkout</a>
+                </div>
             {% else %}
                 <p>Your bag is empty.</p>
                 <a href="{% url 'products' %}" class="btn btn-outline-primary">Continue Shopping</a>
