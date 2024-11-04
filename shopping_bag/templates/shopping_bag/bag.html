@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <hr>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+                <!-- Bag Contents Table (to be populated later) -->
+                <p>Items in your bag will display here...</p>
+            {% else %}
+                <p>Your bag is empty.</p>
+                <a href="{% url 'products' %}" class="btn btn-outline-primary">Continue Shopping</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

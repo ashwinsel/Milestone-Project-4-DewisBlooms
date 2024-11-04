@@ -30,10 +30,27 @@
             {% endif %}
             <p class="h4 font-weight-bold text-true-black mt-3">{{ product.description }}</p>
             
-            <form method="POST" action="{% url 'add_to_cart' product.id %}">
+            <form method="POST" action="{% url 'add_to_bag' product.id %}">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-primary btn-lg mt-4">Add to Cart</button>
+                <div class="form-row">
+                    <!-- Quantity Input -->
+                    <div class="col-3">
+                        <div class="input-group">
+                            <input type="number" name="quantity" value="1" min="1" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <!-- Add to Bag Button -->
+                    <div class="col">
+                        <button type="submit" class="btn btn-black">Add to Bag</button>
+                        <a href="{% url 'products' %}" class="btn btn-outline-black">Keep Shopping</a>
+                    </div>
+                    
+                    <!-- Hidden Redirect URL -->
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                </div>
             </form>
+            
         </div>
     </div>
 </div>

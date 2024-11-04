@@ -61,11 +61,10 @@
           </li>
           <!-- Cart Total in Header -->
           <li class="list-inline-item">
-            <a href="{% url 'shopping_cart' %}" class="nav-link {% if request.session.cart_total %}text-info font-weight-bold{% else %}text-black{% endif %}">
+            <a href="{% url 'view_bag' %}" class="nav-link">
               <div class="text-center">
-                <i class="fas fa-shopping-bag fa-lg"></i>
-                <!-- Display the cart total -->
-                <p class="my-0">£{{ request.session.cart_total|default:"0.00" }}</p>
+                  <i class="fas fa-shopping-bag fa-lg"></i>
+                  <p class="my-0">£{{ request.session.cart_total|default:"0.00" }}</p>
               </div>
             </a>
           </li>

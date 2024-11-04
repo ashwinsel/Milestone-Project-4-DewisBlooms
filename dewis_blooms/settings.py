@@ -39,10 +39,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
-    'shop',
     'products',
     'storages',  # Django Storages app for AWS S3
-    'shopping_bag'
+    'shopping_bag',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +88,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',  # Required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shopping_bag.contexts.bag_contents',
             ],
         },
     },
@@ -147,3 +147,8 @@ if not DEBUG:
 
 # Default auto field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Free delivery threshold and delivery percentage
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10  # Percentage for standard delivery fee
