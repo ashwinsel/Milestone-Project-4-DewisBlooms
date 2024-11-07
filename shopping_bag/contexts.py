@@ -8,29 +8,26 @@ def bag_contents(request):
     total = Decimal('0.00')
     product_count = 0
     bag = request.session.get('bag', {})
-    free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
-    delivery = Decimal(0)
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        subtotal = quantity * product.price  # Calculate subtotal here
-        total += subtotal  # Add subtotal to total
+        subtotal = quantity * product.price
+        total += subtotal
         product_count += quantity
-        
+
         bag_items.append({
             'product': product,
             'quantity': quantity,
-            'subtotal': subtotal,  # Add subtotal to each item
+            'subtotal': subtotal,
         })
 
-    # Add delivery costs logic
     if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * (settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+        delivery = total * (Decimal(settings.STANDARD_DELIVERY_PERCENTAGE) / Decimal('100'))  # Convert to Decimal
+        free_delivery_delta = Decimal(settings.FREE_DELIVERY_THRESHOLD) - total
     else:
         delivery = Decimal('0.00')
         free_delivery_delta = Decimal('0.00')
-    
+
     grand_total = total + delivery
 
     context = {

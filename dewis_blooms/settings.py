@@ -150,5 +150,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Free delivery threshold and delivery percentage
-FREE_DELIVERY_THRESHOLD = 50
-STANDARD_DELIVERY_PERCENTAGE = 10  # Percentage for standard delivery fee
+FREE_DELIVERY_THRESHOLD = 50.00
+STANDARD_DELIVERY_PERCENTAGE = 10.00  # Percentage for standard delivery fee
