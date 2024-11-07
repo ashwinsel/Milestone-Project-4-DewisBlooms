@@ -4,10 +4,11 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 def bag_contents(request):
+    bag = request.session.get('bag', {})
     bag_items = []
     total = Decimal('0.00')
     product_count = 0
-    bag = request.session.get('bag', {})
+    
 
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
