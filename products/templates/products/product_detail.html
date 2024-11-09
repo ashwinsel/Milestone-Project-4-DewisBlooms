@@ -30,7 +30,7 @@
             {% endif %}
             <p class="h4 font-weight-bold text-true-black mt-3">{{ product.description }}</p>
             
-            <form method="POST" action="{% url 'add_to_bag' product.id %}">
+            <form method="POST" action="{% url 'add_to_cart' product.id %}">
                 {% csrf_token %}
                 <div class="form-row">
                     <!-- Quantity Input -->
