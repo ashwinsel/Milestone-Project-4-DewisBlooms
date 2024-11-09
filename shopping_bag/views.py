@@ -30,6 +30,47 @@ def add_to_bag(request, item_id):
     return redirect('products')
 
 
+# Update quatity of products
+def update_bag(request, item_id):
+    """Update the quantity of the specified item in the shopping bag."""
+    product = get_object_or_404(Product, pk=item_id)
+    bag = request.session.get('bag', {})
+
+    item_id = str(item_id)
+
+    action = request.POST.get('action')
+    if action == 'increase':
+        bag[item_id] = bag.get(item_id, 0) + 1
+        messages.success(request, f'Increased {product.name} quantity.')
+    elif action == 'decrease':
+        if item_id in bag:
+            if bag[item_id] > 1:
+                bag[item_id] -= 1
+                messages.success(request, f'Decreased {product.name} quantity.')
+            else:
+                del bag[item_id]
+                messages.success(request, f'Removed {product.name} from your bag.')
+
+    request.session['bag'] = bag
+    return redirect('view_bag')
+
+
+# Remove a single item from bag
+def remove_from_bag(request, item_id):
+    """Remove the item from the shopping bag."""
+    product = get_object_or_404(Product, pk=item_id)
+    bag = request.session.get('bag', {})
+
+    item_id = str(item_id)
+
+    if item_id in bag:
+        del bag[item_id]
+        messages.success(request, f'Removed {product.name} from your bag.')
+
+    request.session['bag'] = bag
+    return redirect('view_bag')
+
+
 # Clear Bag View
 def clear_bag(request):
     """ Clear all items from the shopping bag """

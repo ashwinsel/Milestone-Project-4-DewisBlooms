@@ -136,6 +136,32 @@ body {
     table-layout: fixed;
 }
 
+/* Shopping Bag Styling */
+.product-quantity form {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.product-quantity button {
+    padding: 3px 6px;
+    font-size: 0.9rem;
+}
+
+.btn-clear-bag {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-clear-bag:hover {
+    background-color: #c82333;
+    color: #fff;
+}
+
+div .hero-content .container .mb-4{
+    margin-top: 37px;
+}
+
 /* Improved Mobile Layout */
 @media (max-width: 575.98px) {
     .table-bordered th,
