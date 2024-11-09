@@ -126,10 +126,86 @@ body {
     object-fit: cover; /* Ensures images cover the area without distortion */
 }
 
+/* Responsive Styling for Shopping Bag Page */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-bordered {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Improved Mobile Layout */
+@media (max-width: 575.98px) {
+    .table-bordered th,
+    .table-bordered td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    /* Product Table Layout */
+    .table-bordered td, .table-bordered th {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Product Image Size */
+    .table-bordered img {
+        width: 80px;
+        height: auto;
+        display: block;
+        margin: auto;
+    }
+
+    /* Ensure Buttons are Full Width */
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .d-flex.justify-content-between a {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Clear Bag Button Styling */
+    .btn-clear-bag {
+        background-color: #ff6666;
+        color: #fff;
+        border: none;
+    }
+    .btn-clear-bag:hover {
+        background-color: #e65c5c;
+    }
+}
+
+
 /* Responsive Adjustments */
 @media (max-width: 575.98px) {
     body {
         padding-top: 116px;
+    }
+}
+
+/* Center-aligned Table Cells on Mobile */
+@media (max-width: 767.98px) {
+    .table-bordered th,
+    .table-bordered td {
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Product Table */
+    .table-bordered {
+        font-size: 0.9rem;
+    }
+
+    /* Total Row Adjustments */
+    .summary-row {
+        text-align: right;
     }
 }
 

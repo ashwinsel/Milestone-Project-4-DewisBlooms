@@ -64,7 +64,7 @@
             <a href="{% url 'view_bag' %}" class="nav-link">
               <div class="text-center">
                   <i class="fas fa-shopping-bag fa-lg"></i>
-                  <p class="my-0">£{{ request.session.cart_total|default:"0.00" }}</p>
+                  <p class="my-0">£{{ grand_total|default:"0.00" }}</p>
               </div>
             </a>
           </li>

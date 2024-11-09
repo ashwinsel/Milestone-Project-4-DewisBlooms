@@ -47,8 +47,9 @@
                                                 {% if product.rating %}
                                                     <p class="text-warning">Rating: {{ product.rating }}</p>
                                                 {% endif %}
-                                                <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                                                <form method="POST" action="{% url 'add_to_bag' product.id %}">
                                                     {% csrf_token %}
+                                                    <input type="hidden" name="redirect_url" value="{% url 'products' %}">
                                                     <button type="submit" class="btn btn-primary btn-sm mt-2">Add to Cart</button>
                                                 </form>
                                             </div>

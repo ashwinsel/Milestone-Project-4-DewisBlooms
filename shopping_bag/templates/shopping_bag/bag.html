@@ -29,33 +29,33 @@
                             <tr>
                                 <!-- Product Image -->
                                 <td>
-                                    <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-thumbnail" style="width: 75px;">
+                                    <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="img-thumbnail">
                                 </td>
                                 <!-- Product Name and SKU -->
-                                <td>
+                                <td class="product-info">
                                     <strong>{{ item.product.name }}</strong><br>
                                     SKU: {{ item.product.sku|upper }}
                                 </td>
                                 <!-- Price per Item -->
-                                <td>£{{ item.product.price }}</td>
+                                <td class="product-price">£{{ item.product.price }}</td>
                                 <!-- Quantity -->
-                                <td>{{ item.quantity }}</td>
+                                <td class="product-quantity">{{ item.quantity }}</td>
                                 <!-- Subtotal directly from context processor -->
-                                <td>£{{ item.subtotal|floatformat:2 }}</td>
+                                <td class="product-subtotal">£{{ item.subtotal|floatformat:2 }}</td>
                             </tr>
                             {% endfor %}
                             <!-- Total, Delivery, and Grand Total -->
-                            <tr>
+                            <tr class="summary-row">
                                 <td colspan="3"></td>
                                 <td><strong>Total:</strong></td>
                                 <td>£{{ total|floatformat:2 }}</td>
                             </tr>
-                            <tr>
+                            <tr class="summary-row">
                                 <td colspan="3"></td>
                                 <td><strong>Delivery:</strong></td>
                                 <td>£{{ delivery|floatformat:2 }}</td>
                             </tr>
-                            <tr>
+                            <tr class="summary-row">
                                 <td colspan="3"></td>
                                 <td><strong>Grand Total:</strong></td>
                                 <td>£{{ grand_total|floatformat:2 }}</td>
@@ -70,9 +70,10 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Keep Shopping and Checkout Buttons -->
-                <div class="d-flex justify-content-between">
+                <!-- Keep Shopping, Clear Bag, and Checkout Buttons -->
+                <div class="d-flex justify-content-between mt-3">
                     <a href="{% url 'products' %}" class="btn btn-outline-primary">Keep Shopping</a>
+                    <a href="{% url 'clear_bag' %}" class="btn btn-clear-bag">Clear Bag</a>
                     <a href="#" class="btn btn-primary">Secure Checkout</a>
                 </div>
             {% else %}
