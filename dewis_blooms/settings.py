@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'products',
     'storages',  # Django Storages app for AWS S3
     'shopping_bag',
+    'checkout',
 ]
 
 MIDDLEWARE = [
