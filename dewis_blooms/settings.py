@@ -2,6 +2,7 @@ import os
 import environ
 import dj_database_url
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Initialize environment variables
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,6 +97,8 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'dewis_blooms.wsgi.application'
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Database Configuration (Switching from SQLite to PostgreSQL in production)
 DATABASES = {
