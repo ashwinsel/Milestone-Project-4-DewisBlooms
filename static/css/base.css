@@ -63,6 +63,7 @@ body {
     border-radius: 10px;
     max-width: 600px;
     margin: auto;
+    color: black;
 }
 
 /* Centered Navbar */
@@ -160,6 +161,7 @@ body {
 
 div .hero-content .container .mb-4{
     margin-top: 37px;
+    color: black;
 }
 
 /* Toast container positioning */
@@ -303,6 +305,7 @@ div .hero-content .container .mb-4{
     .hero-content {
         padding: 15px;
         max-width: 90%;
+        color: black;        
     }
 
     .mt-5, .my-5 {

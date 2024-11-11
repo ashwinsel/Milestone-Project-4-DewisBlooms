@@ -1,6 +1,91 @@
+
+
 #payment-form {
     margin-top: 20px;
 }
 #payment-form .btn {
     margin-top: 10px;
+}
+
+/* General Stripe element styling */
+.StripeElement,
+.stripe-style-input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #333; /* Darker border for contrast */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly translucent background */
+    color: #333; /* Text color */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Focused state */
+.StripeElement--focus,
+.stripe-style-input:focus {
+    border-color: #007bff; /* Match the blue shade of your Complete Checkout button */
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Styling for invalid card inputs */
+.StripeElement--invalid {
+    border-color: #dc3545; /* Bootstrap's danger color */
+    background-color: rgba(255, 230, 230, 0.9); /* Light red for error indication */
+}
+
+.StripeElement--webkit-autofill {
+    background-color: transparent !important;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #999;
+}
+
+/* Custom error display */
+#card-errors {
+    color: #dc3545; /* Bootstrap's danger color */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Additional styling for card element container */
+#card-element {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* Payment Information Header */
+fieldset legend {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Align the placeholder color to be consistent */
+.stripe-style-input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+/* Button styling */
+#payment-form button {
+    margin-top: 20px;
+}
+
+/* Adjust overall layout on small screens */
+@media (max-width: 576px) {
+    .StripeElement, .stripe-style-input {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .col-lg-6{
+        color: black;
+    }
 }
