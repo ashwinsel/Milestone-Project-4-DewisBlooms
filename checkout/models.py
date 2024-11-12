@@ -1,4 +1,5 @@
 import uuid
+from decimal import Decimal
 from django.db import models, transaction
 from django.conf import settings
 from django.db.models import Sum
@@ -9,11 +10,12 @@ class Order(models.Model):
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
-    address = models.CharField(max_length=80, null=False, blank=False)
-    city = models.CharField(max_length=40, null=False, blank=False)
+    country = models.CharField(max_length=40)
     postcode = models.CharField(max_length=20, blank=True)
-    county = models.CharField(max_length=80, blank=True)
-    country = models.CharField(max_length=40, null=False, blank=False)
+    town_or_city = models.CharField(max_length=40)
+    street_address1 = models.CharField(max_length=80)
+    street_address2 = models.CharField(max_length=80, blank=True)
+    county = models.CharField(max_length=80, blank=True)    
     date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
@@ -24,20 +26,29 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def save(self, *args, **kwargs):
-        """ Override the original save method to set the order number if it hasn't been set already. """
+        """ 
+        Override the original save method to set the order number if it hasn't been set already.
+        Save the order instance.
+        """
         if not self.order_number:
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
     def update_total(self):
-        """ Update grand total each time a line item is added, accounting for delivery costs """
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+        """Update grand total each time a line item is added, accounting for delivery costs as a percentage."""
+        # Calculate the total of all line items
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or Decimal('0')
+        
+        # Apply delivery percentage if total is below the free delivery threshold
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = settings.STANDARD_DELIVERY_COST
+            self.delivery_cost = (self.order_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE) / Decimal('100'))
         else:
-            self.delivery_cost = 0
+            self.delivery_cost = Decimal('0')
+        
+        # Calculate the grand total
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
+    
 
     def __str__(self):
         return self.order_number
@@ -45,15 +56,18 @@ class Order(models.Model):
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
 
     def save(self, *args, **kwargs):
-        """ Override the save method to set the lineitem total and update the order total. """
+        """ 
+        Override the save method to set the lineitem total and update the order total. 
+        """
+        # Calculate line item total based on product price and quantity
         self.lineitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-        self.order.update_total()  # Update the order total after saving the line item
+        # Update the order total after saving the line item
+        self.order.update_total()
 
     def __str__(self):
         return f'{self.product.sku} on order {self.order.order_number}'

@@ -134,10 +134,12 @@
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+      <!-- Stripe -->
       <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block postloadjs %}
+    <!-- Toast messages-->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
           var toastElements = document.querySelectorAll('.toast');

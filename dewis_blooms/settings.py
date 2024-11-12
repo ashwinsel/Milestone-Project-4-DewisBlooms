@@ -14,8 +14,9 @@ SECRET_KEY = env("SECRET_KEY")  # Removed default fallback for production securi
 DEBUG = env.bool("DEBUG", default=False)
 
 # Stripe Settings
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_CURRENCY = 'GBP'
 
 # Allowed Hosts
 ALLOWED_HOSTS = [
