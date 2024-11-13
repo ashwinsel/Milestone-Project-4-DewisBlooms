@@ -7,6 +7,14 @@
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block corejs %}
+    <!-- Load jQuery, Popper, Bootstrap, and Stripe -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+{% endblock %}
+
 {% block content %}
 <div class="container mb-5">
     <h2 class="text-center mt-4">Checkout</h2>
