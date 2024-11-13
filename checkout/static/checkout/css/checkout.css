@@ -7,6 +7,58 @@
     margin-top: 10px;
 }
 
+ /* Custom Styles for Checkout Success Page */
+ .checkout-success-container {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+.section-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+.order-info, .order-details, .delivery-info, .billing-info {
+    margin-bottom: 1.5rem;
+}
+.info-label {
+    font-weight: bold;
+    color: #555;
+}
+.info-value {
+    color: #333;
+    font-size: 1rem;
+}
+.text-muted {
+    color: #6c757d !important;
+}
+.order-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+.return-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.return-link:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
 /* General Stripe element styling */
 .StripeElement,
 .stripe-style-input {

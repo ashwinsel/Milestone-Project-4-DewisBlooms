@@ -61,9 +61,9 @@ body {
     background-color: rgba(255, 87, 51, 0.7);
     padding: 20px;
     border-radius: 10px;
-    max-width: 600px;
-    margin: auto;
+    max-width: 600px;    
     color: black;
+    margin-top: 25px;
 }
 
 /* Centered Navbar */
