@@ -22,8 +22,8 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
-        """ Generate a random, unique order number using UUID """
-        return uuid.uuid4().hex.upper()
+        """ Generate a random, unique order number """
+        return uuid.uuid4().hex[:25].upper()
 
     def save(self, *args, **kwargs):
         """ 

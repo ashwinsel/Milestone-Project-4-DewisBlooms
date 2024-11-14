@@ -10,17 +10,28 @@
     <div class="checkout-success-container">
         <hr style="border: 0; height: 2px; background-color: #333;">
         <div class="text-center">            
-            <h2 class="logo-font mb-4">Thank You for Your Order!</h2>
-            <p>Your order confirmation details are below. A confirmation email has been sent to <strong>{{ order.email }}</strong>.</p>
+            <h2 class="logo-font mb-4"><i class="fas fa-check-circle text-success"></i>Thank You!</h2>
+            <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
         </div>
         
-        <div class="section-header">Order Info</div>
+        <div class="section-header">
+            <h5 class="text-primary mb-2"><i class="fas fa-receipt"></i>Order Info</h5>
+        </div>
         <div class="order-info">
-            <p><span class="info-label">Order Number:</span> <span class="info-value">{{ order.order_number }}</span></p>
-            <p><span class="info-label">Order Date:</span> <span class="info-value">{{ order.date|date:"F d, Y, h:i A" }}</span></p>
+            <p class="mb-1">
+                <span class="order-info-icon"><i class="fas fa-hashtag"></i></span>
+                <span class="order-label">Order Number:</span> 
+                <span class="order-number">{{ order.order_number }}</span>
+            </p>
+            <p class="mb-1">
+                <span class="order-info-icon"><i class="fas fa-calendar-alt"></i></span>
+                <span class="order-label">Order Date:</span> {{ order.date }}
+            </p>
         </div>
         <hr style="border: 0; height: 2px; background-color: #333;">
-        <div class="section-header">Order Details</div>
+        <div class="section-header">
+            <h5 class="text-primary mb-2"><i class="fas fa-box"></i>Order Details</h5>
+        </div>
         <div class="order-details">
             {% for item in order.lineitems.all %}
             <div class="d-flex justify-content-between">
@@ -30,20 +41,31 @@
             {% endfor %}
         </div>
         <hr style="border: 0; height: 2px; background-color: #333;">
-        <div class="section-header">Delivery To</div>
+        <div class="section-header">
+            <h5 class="text-primary mb-2"><i class="fas fa-shipping-fast"></i>Delivery To</h5>
+        </div>
         <div class="delivery-info">
-            <p><span class="info-label">Full Name:</span> <span class="info-value">{{ order.full_name }}</span></p>
-            <p><span class="info-label">Address:</span> <span class="info-value">{{ order.street_address1 }}</span>{% if order.street_address2 %}, <span class="info-value">{{ order.street_address2 }}</span>{% endif %}, <span class="info-value">{{ order.town_or_city }}, {{ order.county }}</span></p>
-            <p><span class="info-label">Country:</span> <span class="info-value">{{ order.country }}</span></p>
-            <p><span class="info-label">Postal Code:</span> <span class="info-value">{{ order.postcode }}</span></p>
-            <p><span class="info-label">Phone Number:</span> <span class="info-value">{{ order.phone_number }}</span></p>
+            <p class="mb-1"><i class="fas fa-user"></i> <strong>Full Name:</strong> {{ order.full_name }}</p>
+                <p class="mb-1"><i class="fas fa-map-marker-alt"></i> <strong>Address line 1:</strong> {{ order.street_address1 }}</p>
+                {% if order.street_address2 %}
+                <p class="mb-1"><i class="fas fa-map-marker-alt"></i> <strong>Address line 2:</strong> {{ order.street_address2 }}</p>
+                {% endif %}
+                <p class="mb-1"><i class="fas fa-city"></i> <strong>City:</strong> {{ order.town_or_city }}</p>
+                {% if order.county %}
+                <p class="mb-1"><i class="fas fa-map"></i> <strong>County:</strong> {{ order.county }}</p>
+                {% endif %}
+                <p class="mb-1"><i class="fas fa-mail-bulk"></i> <strong>Postal Code:</strong> {{ order.postcode }}</p>
+                <p class="mb-1"><i class="fas fa-flag"></i> <strong>Country:</strong> {{ order.country }}</p>
+                <p class="mb-1"><i class="fas fa-phone"></i> <strong>Phone Number:</strong> {{ order.phone_number }}</p>
         </div>
         <hr style="border: 0; height: 2px; background-color: #333;">
-        <div class="section-header">Billing Info</div>
+        <div class="section-header">
+            <h5 class="text-primary mb-2"><i class="fas fa-credit-card"></i> Billing Info</h5>
+        </div>
         <div class="billing-info">
-            <p class="d-flex justify-content-between"><span class="info-label">Order Total:</span> <span class="order-total">£{{ order.order_total|floatformat:2 }}</span></p>
-            <p class="d-flex justify-content-between"><span class="info-label">Delivery Cost:</span> <span class="order-total">£{{ order.delivery_cost|floatformat:2 }}</span></p>
-            <p class="d-flex justify-content-between"><span class="info-label">Grand Total:</span> <span class="order-total">£{{ order.grand_total|floatformat:2 }}</span></p>
+            <p class="mb-1"><strong>Order Total:</strong> £{{ order.order_total }}</p>
+            <p class="mb-1"><strong>Delivery:</strong> £{{ order.delivery_cost }}</p>
+            <p class="mb-1"><strong>Grand Total:</strong> £{{ order.grand_total }}</p>
         </div>
         <hr style="border: 0; height: 2px; background-color: #333;">
         <div class="text-center">
