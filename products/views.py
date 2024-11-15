@@ -130,19 +130,15 @@ def shopping_cart(request):
 def add_product(request):
     """Allow store owners to add a new product to the store."""
     if request.method == 'POST':
-        # Instantiate the form with POST data and any uploaded files
         form = ProductForm(request.POST, request.FILES)
         
-        # Validate the form
         if form.is_valid():
-            form.save()
+            product = form.save()  # Save the product and store it in a variable
             messages.success(request, 'Product added successfully!')
-            return redirect('add_product')  # Redirect to the add product page to clear the form
+            return redirect('product_detail', product_id=product.id)  # Redirect to product detail
         else:
-            # Form errors will be displayed in the template
             messages.error(request, 'Failed to add product. Please check the form for errors.')
     else:
-        # Instantiate an empty form for GET requests
         form = ProductForm()
     
     context = {
@@ -173,3 +169,12 @@ def edit_product(request, product_id):
         'product': product,
     }
     return render(request, 'products/edit_product.html', context)
+
+
+def delete_product(request, product_id):
+    """Allow store owners to delete a product."""
+    product = get_object_or_404(Product, pk=product_id)
+
+    product.delete()
+    messages.success(request, 'Product deleted successfully!')
+    return redirect('products')  # Redirect to the products page

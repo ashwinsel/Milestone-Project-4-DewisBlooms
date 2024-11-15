@@ -52,9 +52,10 @@
                 </div>
             </form>
 
-            <!-- Edit Product Button for Superusers -->
+            <!-- Edit and Delete Buttons for Superusers -->
             {% if user.is_superuser %}
-                <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-secondary mt-2">Edit Product</a>
+                <a href="{% url 'edit_product' product.id %}" class="btn btn-sm btn-outline-secondary mt-2">Edit</a>
+                <a href="{% url 'delete_product' product.id %}" class="btn btn-sm btn-outline-danger mt-2">Delete</a>
             {% endif %}
 
             <div class="product-rating mt-4">
