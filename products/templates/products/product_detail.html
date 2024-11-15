@@ -51,7 +51,13 @@
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
-            <div class="product-rating">
+
+            <!-- Edit Product Button for Superusers -->
+            {% if user.is_superuser %}
+                <a href="{% url 'edit_product' product.id %}" class="btn btn-outline-secondary mt-2">Edit Product</a>
+            {% endif %}
+
+            <div class="product-rating mt-4">
                 <h2>Rate this Product</h2>
                 {% if user.is_authenticated %}
                 <form method="POST" class="rating-form">
