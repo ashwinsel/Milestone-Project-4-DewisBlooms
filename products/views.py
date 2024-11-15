@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.db.models.functions import Lower
 from .models import Product, Category
 from django.contrib.auth.decorators import login_required
+from .forms import ProductForm
 
 
 def all_products(request):
@@ -124,3 +125,12 @@ def shopping_cart(request):
         'cart_total': total,
     }
     return render(request, 'shopping_bag/shopping_cart.html', context)
+
+
+def add_product(request):
+    """Allow store owners to add a product to the store."""
+    form = ProductForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'products/add_product.html', context)
