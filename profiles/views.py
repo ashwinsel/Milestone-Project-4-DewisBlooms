@@ -16,8 +16,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     template = 'profiles/profile.html'
-    context = {
-        'form': form,
+    context = {        
         'profile': profile,
     }
     return render(request, template, context)
