@@ -164,6 +164,9 @@ if not DEBUG:
     AWS_S3_REGION_NAME = os.environ['AWS_S3_REGION_NAME']
     AWS_S3_FILE_OVERWRITE = os.environ['AWS_S3_FILE_OVERWRITE'] == 'True'
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+    AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',  # Cache for 1 day
+}
 
     STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
