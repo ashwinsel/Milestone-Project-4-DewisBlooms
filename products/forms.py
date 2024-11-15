@@ -4,6 +4,8 @@ from .models import Product, Category
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
+        # Exclude the rating field
+        exclude = ('rating',)
         fields = '__all__'  # This includes all fields from the Product model
 
     def __init__(self, *args, **kwargs):

@@ -48,11 +48,11 @@ def all_products(request):
 def product_detail(request, product_id):
     """
     A view to display individual product details.
-    Allows logged-in users to add a rating for the product.
+    Allows logged-in users to add a rating for the product, excluding superusers.
     """
     product = get_object_or_404(Product, pk=product_id)
 
-    if request.method == 'POST' and request.user.is_authenticated:
+    if request.method == 'POST' and request.user.is_authenticated and not request.user.is_superuser:
         try:
             rating = float(request.POST.get('rating'))
             if 0 <= rating <= 5:
