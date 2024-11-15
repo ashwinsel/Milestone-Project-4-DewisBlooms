@@ -8,8 +8,8 @@ from django.contrib.messages import constants as messages
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security Settings
-SECRET_KEY = os.environ['SECRET_KEY']
-DEBUG = os.environ['DEBUG'] == 'True'
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
+DEBUG = os.environ.get('DEVELOPMENT', False)
 
 # Stripe Settings
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
