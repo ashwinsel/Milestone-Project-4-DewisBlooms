@@ -49,6 +49,21 @@
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </div>
             </form>
+            <div class="product-rating">
+                <h2>Rate this Product</h2>
+                {% if user.is_authenticated %}
+                <form method="POST" class="rating-form">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="rating">Your Rating (0-5):</label>
+                        <input type="number" name="rating" id="rating" min="0" max="5" step="0.1" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Rating</button>
+                </form>
+                {% else %}
+                <p><a href="{% url 'account_login' %}" class="login-link">Log in</a> to rate this product.</p>
+                {% endif %}
+            </div>
             
         </div>
     </div>

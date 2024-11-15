@@ -7,6 +7,10 @@ from products.models import Product
 from profiles.models import UserProfile
 
 class Order(models.Model):
+    """
+    Represents an order placed by a user, with associated details like
+    delivery cost and totals.
+    """
     user_profile = models.ForeignKey(
         UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
     )
@@ -30,8 +34,9 @@ class Order(models.Model):
 
 
     def _generate_order_number(self):
-        """ Generate a random, unique order number """
-        return uuid.uuid4().hex[:25].upper()
+        """Generate a random, unique order number."""
+        return f"{uuid.uuid4().hex[:8]}-{uuid.uuid4().hex[:8]}".upper()
+
 
     def save(self, *args, **kwargs):
         """ 
