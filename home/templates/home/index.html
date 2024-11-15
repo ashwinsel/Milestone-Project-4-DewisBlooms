@@ -5,8 +5,8 @@
 
 {% block content %}
 <div class="hero-section text-center text-white d-flex align-items-center justify-content-center">
-    <div class="hero-content">
-        <h1 class="display-4 fw-bold">Welcome to Dewi's Blooms!</h1>
+    <div class="profile-container">
+        <h2 class="display-4 fw-bold">Welcome to Dewi's Blooms!</h2>
         <p class="lead">Local Welsh flowers for every occasion</p>
         <a href="{% url 'products' %}" class="btn btn-primary mt-3">Shop Now</a>
         {% if user.is_authenticated %}

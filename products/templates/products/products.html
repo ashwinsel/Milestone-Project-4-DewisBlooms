@@ -16,13 +16,14 @@
             <div class="card">
                 <div class="card-header" id="heading{{ category.name }}">
                     <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ category.name }}" aria-expanded="true" aria-controls="collapse{{ category.name }}">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ category.name }}" aria-expanded="false" aria-controls="collapse{{ category.name }}">
                             {{ category.name|title }} Flowers
                         </button>
                     </h2>
                 </div>
-                <div id="collapse{{ category.name }}" class="collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ category.name }}" data-parent="#productAccordion">
-                    <div class="card-body">
+                <!-- Set the collapse to be closed initially by not adding the "show" class -->
+                <div id="collapse{{ category.name }}" class="collapse" aria-labelledby="heading{{ category.name }}" data-parent="#productAccordion">
+                    <div class="card-body" style="background-color: rgba(255, 255, 255, 0.7);">
                         <div class="row justify-content-center">
                             {% for product in products %}
                                 {% if product.category == category %}

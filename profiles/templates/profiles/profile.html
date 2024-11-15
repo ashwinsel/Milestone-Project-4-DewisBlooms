@@ -1,26 +1,79 @@
 {% extends "base.html" %}
 {% load static %}
-
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
-{% endblock %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container profile-container">
+<div class="container profile-container my-5">
     <h2>My Profile</h2>
-    <div class="profile-details">
-        <h4>Personal Information</h4>
-        <p><strong>Username:</strong> {{ profile.user.username }}</p>
-        <p><strong>Email:</strong> {{ profile.user.email }}</p>
+    <div class="row">
+        <!-- Profile Form Column -->
+        <div class="col-md-6">
+            <h3>Update Your Profile</h3>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary mt-3">Update Profile</button>
+            </form>
+        </div>
         
-        <h4>Default Delivery Information</h4>
-        <p><strong>Phone Number:</strong> {{ profile.default_phone_number }}</p>
-        <p><strong>Country:</strong> {{ profile.default_country }}</p>
-        <p><strong>Postcode:</strong> {{ profile.default_postcode }}</p>
-        <p><strong>Town or City:</strong> {{ profile.default_town_or_city }}</p>
-        <p><strong>Street Address 1:</strong> {{ profile.default_street_address1 }}</p>
-        <p><strong>Street Address 2:</strong> {{ profile.default_street_address2 }}</p>
-        <p><strong>County:</strong> {{ profile.default_county }}</p>
+        <!-- Order History Column -->
+        <div class="col-md-6">
+            <h3>Order History</h3>
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'order_history' order.order_number %}" 
+                                   title="Order {{ order.order_number }}">
+                                    {{ order.order_number|truncatechars:6 }}
+                                </a>
+                            </td>
+                            <td>{{ order.date|date:"d M Y" }}</td>
+                            <td>
+                                <ul class="list-unstyled">
+                                    {% for item in order.lineitems.all %}
+                                        <li class="small">
+                                            {{ item.product.name }} x{{ item.quantity }}
+                                            {% if item.size %} (Size: {{ item.size }}) {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </td>
+                            <td>£{{ order.grand_total }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">No orders found.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Ensure the country field (if exists) doesn't show invalid styling when empty
+            var countryField = document.querySelector("#id_default_country");
+            if (countryField) {
+                countryField.addEventListener("input", function() {
+                    if (!this.value) {
+                        this.classList.remove("is-invalid");
+                    }
+                });
+            }
+        });
+    </script>    
 {% endblock %}
