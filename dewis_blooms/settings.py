@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security Settings
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
-DEBUG = os.environ.get('DEVELOPMENT', False)
+DEBUG = True
 
 # Stripe Settings
 STRIPE_PUBLIC_KEY = os.environ['STRIPE_PUBLIC_KEY']
@@ -56,6 +56,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
