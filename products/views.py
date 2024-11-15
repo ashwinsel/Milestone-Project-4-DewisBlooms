@@ -127,6 +127,7 @@ def shopping_cart(request):
     return render(request, 'shopping_bag/shopping_cart.html', context)
 
 
+@login_required
 def add_product(request):
     """Allow store owners to add a new product to the store."""
     if request.method == 'POST':
@@ -147,6 +148,7 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
+@login_required
 def edit_product(request, product_id):
     """Allow store owners to edit an existing product."""
     product = get_object_or_404(Product, pk=product_id)
@@ -171,6 +173,7 @@ def edit_product(request, product_id):
     return render(request, 'products/edit_product.html', context)
 
 
+@login_required
 def delete_product(request, product_id):
     """Allow store owners to delete a product."""
     product = get_object_or_404(Product, pk=product_id)
