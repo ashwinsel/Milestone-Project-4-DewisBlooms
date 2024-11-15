@@ -62,8 +62,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     max-width: 600px;    
-    color: black;
     margin-top: 25px;
+    font-family: 'Dancing Script', cursive;
+    color: #5a8c5a;
 }
 
 /* Centered Navbar */

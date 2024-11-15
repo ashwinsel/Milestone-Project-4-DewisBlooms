@@ -1,0 +1,79 @@
+.allauth-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+.allauth-form-inner {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.allauth-form-inner h2 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.allauth-form-inner hr {
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+}
+
+.allauth-form-inner .btn-primary {
+    background-color: #5cb85c;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.allauth-form-inner .btn-primary:hover {
+    background-color: #4cae4c;
+}
+
+/* Style paragraphs within the inner content div */
+.allauth-form-inner p {
+    margin-top: 10px;
+    color: #6c757d;  /* Bootstrap's text-secondary color */
+}
+
+/* Style input fields */
+.allauth-form-inner input {
+    border: 1px solid #000;
+    border-radius: 0;
+    color: #333;
+}
+
+/* Hide labels for all inputs except "Remember me" checkbox */
+.allauth-form-inner label:not([for="id_login"]) {
+    display: none;
+}
+
+/* Customize placeholder text color */
+::placeholder {
+    color: #6c757d;  /* Bootstrap's text-secondary color */
+}
+
+/* Button styling to match site's aesthetic */
+.allauth-form-inner .btn-primary {
+    background-color: #5cb85c;
+    color: #fff;
+    border-radius: 4px;
+    border: 1px solid #5cb85c;
+    transition: background-color 0.3s;
+}
+
+.allauth-form-inner .btn-primary:hover {
+    background-color: #4cae4c;
+    border-color: #4cae4c;
+}
+
+/* Customize link colors */
+.allauth-form-inner a {
+    color: #17a2b8;  /* Bootstrap's text-info color */
+}
+
+.allauth-form-inner a:hover {
+    color: #138496;
+}

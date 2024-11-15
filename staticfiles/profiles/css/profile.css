@@ -1,0 +1,110 @@
+.profile-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    background-image: url('../images/floral-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+
+.profile-container h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #5a8c5a;
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+}
+
+.profile-form .form-section {
+    background: rgba(250, 250, 250, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form .form-section h4 {
+    font-family: 'Dancing Script', cursive;
+    color: #4a634a;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.profile-form .form-control {
+    border: 1px solid #5a8c5a;
+    border-radius: 5px;
+    box-shadow: none;
+    color: #4a634a;
+}
+
+.profile-form .form-control::placeholder {
+    color: #999;
+}
+
+.profile-form .form-control:focus {
+    border-color: #5a8c5a;
+    box-shadow: 0 0 5px rgba(90, 140, 90, 0.4);
+}
+
+.profile-form .profile-save-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #5a8c5a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-form .profile-save-btn:hover {
+    background-color: #4a634a;
+}
+
+.profile-form .form-control, .profile-form button {
+    margin-bottom: 15px;
+}
+
+.profile-form label {
+    font-weight: bold;
+    color: #4a634a;
+}
+
+.profile-form .form-check-label {
+    color: #4a634a;
+}
+
+.profile-form .form-section p::before {
+    content: "🌸 ";
+    color: #ff69b4;
+}
+
+/* Placeholder Color */
+input::placeholder {
+    color: #999;
+    opacity: 1; /* For older browsers */
+}
+
+/* Text color */
+input, textarea {
+    color: #333;
+}
+
+/* Fix styling for invalid fields (especially for the country field if it’s non-required) */
+input:invalid, textarea:invalid {
+    border-color: #dc3545; /* Bootstrap’s danger color */
+}
+
+/* Hide the asterisk on non-required fields */
+input:not(:required):valid {
+    box-shadow: none;
+    border-color: #ced4da;
+}
