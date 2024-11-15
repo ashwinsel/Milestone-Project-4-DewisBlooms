@@ -1,0 +1,20 @@
+Dear {{ order.full_name }},
+
+Thank you for your order with Dewis Blooms! Your order number is {{ order.order_number }}.
+
+Order Summary:
+- Date: {{ order.date }}
+- Order Total: £{{ order.order_total }}
+- Delivery Cost: £{{ order.delivery_cost }}
+- Grand Total: £{{ order.grand_total }}
+
+Your items will be shipped to:
+{{ order.street_address1 }}
+{% if order.street_address2 %}{{ order.street_address2 }}{% endif %}
+{{ order.town_or_city }}, {{ order.county }}
+{{ order.country }} - {{ order.postcode }}
+
+If you need assistance, please contact us at {{ contact_email }}.
+
+Kind regards,
+Dewis Blooms Team

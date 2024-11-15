@@ -1,9 +1,7 @@
 import os
 import dj_database_url
-import env
 from pathlib import Path
 from django.contrib.messages import constants as messages
-
 
 # Base Directory
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -72,7 +70,15 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' if DEBUG else 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'dewisblooms@example.com' if DEBUG else os.environ['EMAIL_HOST_USER']
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'default@example.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'your_password')
 
 # django-allauth configurations
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
@@ -168,15 +174,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Free delivery threshold and delivery percentage
 FREE_DELIVERY_THRESHOLD = 50.00
 STANDARD_DELIVERY_PERCENTAGE = 10.00
-
-if not DEBUG:  # For production
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = os.environ['EMAIL_HOST_USER']
-    EMAIL_HOST_PASSWORD = os.environ['EMAIL_HOST_PASSWORD']
-    DEFAULT_FROM_EMAIL = 'b6rd31sv@students.codeinstitute.net'
-else:  # For development
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'noreply@localhost'
