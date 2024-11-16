@@ -20,12 +20,13 @@ Stripe is used for secure payments, ensuring a safe and reliable checkout experi
 
 To access admin functionality and explore the backend features of the site, use the following superuser credentials:
 
-- **Username:** ashwinsel@someemail.com  
+- **Username:** ashwinsel
+- **Email:**ashwinsel@someemail.com  
 - **Password:** Anusha1990  
 
 Dewi's Blooms not only highlights the beauty of flowers with high-quality imagery but also provides a seamless e-commerce experience that ensures users feel confident and satisfied with their purchase journey.
 
-![Screenshot](#)
+![Screenshot](./static/images/all-devices-black%20(1).png)
 
 ---
 
@@ -435,82 +436,82 @@ Here are the tables for manual testing of Dewi's Blooms app that you can use to 
 
 ---
 
+Here is the updated table reflecting your changes:
+
+---
+
 ### **Manual Testing (Feature Testing)**
 
 #### **Authentication**
 
-| Page      | User Action                                      | Expected Result                                                                                 | Pass/Fail | Comments          |
-|-----------|--------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------|-------------------|
-| Sign In   | Enter valid username and password, click 'Sign In' | Directed to homepage. Toast confirming successful sign in.                                      |           |                   |
-|           | Enter invalid credentials, click 'Sign In'        | Error message indicating incorrect username/password.                                           |           |                   |
-|           | Click 'Sign-up'                                   | Redirected to the 'Sign Up' page.                                                              |           |                   |
-|           | Click 'Forgot your password?'                     | Redirected to the 'Password Reset' page.                                                       |           |                   |
-| Sign Up   | Enter valid credentials, click 'Sign-Up'          | Account created, verification email sent. Redirect to verification page.                       |           |                   |
-|           | Click verification link in email                  | Opens 'Confirm Email' page.                                                                   |           |                   |
-|           | Click 'Confirm'                                   | Redirected to 'Sign-In' page. Toast confirms email verification.                               |           |                   |
-|           | Submit empty form fields                          | Validation errors prompting to fill in required fields.                                        |           |                   |
-|           | Enter an existing username                        | Error message indicating the username is already taken.                                        |           |                   |
-| Sign Out  | Click 'Sign Out'                                  | Redirected to homepage. Toast confirms successful sign out.                                    |           |                   |
+| Sr. No. | Page      | User Action                                      | Expected Result                                                                                 | Pass/Fail | Comments          |
+|---------|-----------|--------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------|-------------------|
+| 1       | Sign In   | Enter valid username and password, click 'Sign In' | Directed to homepage. Toast confirming successful sign in.                                      | ✅ Pass    |                   |
+| 1.1     |           | Enter invalid credentials, click 'Sign In'        | Error message indicating incorrect username/password.                                           | ✅ Pass    |                   |
+| 1.2     |           | Click 'Sign-up'                                   | Redirected to the 'Sign Up' page.                                                              | ✅ Pass    |                   |
+| 1.3     |           | Click 'Forgot your password?'                     | Redirected to the 'Password Reset' page.                                                       | ✅ Pass    |                   |
+| 2       | Sign Up   | Enter valid credentials, click 'Sign-Up'          | Account created, verification email sent. Redirect to verification page.                       | ✅ Pass    |                   |
+| 2.1     |           | Click verification link in email                  | Opens 'Confirm Email' page.                                                                   | ✅ Pass    |                   |
+| 2.2     |           | Click 'Confirm'                                   | Redirected to 'Sign-In' page. Toast confirms email verification.                               | ✅ Pass    |                   |
+| 2.3     |           | Submit empty form fields                          | Validation errors prompting to fill in required fields.                                        | ✅ Pass    |                   |
+| 2.4     |           | Enter an existing username                        | Error message indicating the username is already taken.                                        | ✅ Pass    |                   |
+| 3       | Sign Out  | Click 'Sign Out'                                  | Redirected to homepage. Toast confirms successful sign out.                                    | ✅ Pass    |                   |
 
 ---
 
 #### **All Visitor Features**
 
-| Page                     | User Action                                     | Expected Result                                                                            | Pass/Fail | Comments          |
-|--------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------|-----------|-------------------|
-| Navbar - Logo            | Clicks logo                                     | Navigate to homepage.                                                                     |           |                   |
-| Navbar - Search Bar      | Enter valid search query                        | Displays search results matching the query.                                               |           |                   |
-|                          | Enter invalid query or leave empty              | Displays all products. Toast message explaining no results found.                         |           |                   |
-| Navbar - User Icon       | Clicks user icon (unauthenticated)              | Redirected to the 'Sign In' page.                                                         |           |                   |
-|                          | Clicks user icon (authenticated)                | Redirected to the 'Profile' page.                                                         |           |                   |
-| Navbar - Basket Icon     | Clicks basket icon                              | Redirected to the 'Shopping Bag' page.                                                    |           |                   |
+| Sr. No. | Page                     | User Action                                     | Expected Result                                                                            | Pass/Fail | Comments          |
+|---------|--------------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------|-----------|-------------------|
+| 4       | Navbar - Logo            | Clicks logo                                     | Navigate to homepage.                                                                     | ✅ Pass    |                   |
+| 4.1     | Navbar - Search Bar      | Enter valid search query                        | Displays search results matching the query.                                               | ✅ Pass    |                   |
+| 4.2     |                          | Enter invalid query or leave empty              | Displays all products. Toast message explaining no results found.                         | ✅ Pass    |                   |
+| 4.3     | Navbar - User Icon       | Clicks user icon (unauthenticated)              | Redirected to the 'Sign In' page.                                                         | ✅ Pass    |                   |
+| 4.4     |                          | Clicks user icon (authenticated)                | Redirected to the 'Profile' page.                                                         | ✅ Pass    |                   |
+| 4.5     | Navbar - Basket Icon     | Clicks basket icon                              | Redirected to the 'Shopping Bag' page.                                                    | ✅ Pass    |                   |
 
 ---
 
 #### **Product Features**
 
-| Page               | User Action                                      | Expected Result                                                                 | Pass/Fail | Comments          |
-|--------------------|--------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
-| Products Page      | Hover over a product                             | Image overlay appears with a "View Details" button.                             |           |                   |
-|                    | Click on a product                               | Redirected to the product detail page.                                          |           |                   |
-| Product Detail     | Add product to shopping bag                      | Product added. Toast confirms addition. Bag icon count increases.               |           |                   |
-|                    | Change product quantity                          | Quantity updates dynamically in the shopping bag.                               |           |                   |
-| Search Results     | Click on a search result                         | Redirected to the respective product detail page.                               |           |                   |
+| Sr. No. | Page               | User Action                                      | Expected Result                                                                 | Pass/Fail | Comments          |
+|---------|--------------------|--------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
+| 5.1     | Product Detail     | Add product to shopping bag                      | Product added. Toast confirms addition. Bag icon count increases.               | ✅ Pass    |                   |
+| 5.2     |                    | Change product quantity                          | Quantity updates dynamically in the shopping bag.                               | ✅ Pass    |                   |
+| 5.3     | Search Results     | Click on a search result                         | Redirected to the respective product detail page.                               | ✅ Pass    |                   |
 
 ---
 
 #### **Checkout**
 
-| Page                  | User Action                                    | Expected Result                                                                 | Pass/Fail | Comments          |
-|-----------------------|------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
-| Shopping Bag          | Click "Secure Checkout" button                | Redirected to the 'Checkout' page.                                              |           |                   |
-| Checkout              | Submit form with empty fields                 | Validation errors prompting to fill in required fields.                         |           |                   |
-|                       | Enter invalid card details                    | Error message explaining invalid payment details.                               |           |                   |
-|                       | Enter valid card details                      | Redirected to 'Checkout Success' page. Toast confirms successful order.         |           |                   |
-| Checkout Success      | Click "Continue Shopping"                     | Redirected to homepage.                                                         |           |                   |
+| Sr. No. | Page                  | User Action                                    | Expected Result                                                                 | Pass/Fail | Comments          |
+|---------|-----------------------|------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
+| 6       | Shopping Bag          | Click "Secure Checkout" button                | Redirected to the 'Checkout' page.                                              | ✅ Pass    |                   |
+| 6.1     | Checkout              | Submit form with empty fields                 | Validation errors prompting to fill in required fields.                         | ✅ Pass    |                   |
+| 6.2     |                       | Enter invalid card details                    | Error message explaining invalid payment details.                               | ✅ Pass    |                   |
+| 6.3     |                       | Enter valid card details                      | Redirected to 'Checkout Success' page. Toast confirms successful order.         | ✅ Pass    |                   |
+| 6.4     | Checkout Success      | Click "Continue Shopping"                     | Redirected to homepage.                                                         | ✅ Pass    |                   |
 
 ---
 
 #### **Profile Features**
 
-| Page                  | User Action                                     | Expected Result                                                                | Pass/Fail | Comments          |
-|-----------------------|-------------------------------------------------|--------------------------------------------------------------------------------|-----------|-------------------|
-| Profile Page          | Click on "Order History"                       | Redirected to the 'Order History' page.                                        |           |                   |
-|                       | Click on "Edit Profile"                        | Redirected to the 'Edit Profile' page.                                         |           |                   |
-| Edit Profile          | Submit valid changes                           | Profile updates successfully. Toast confirms the update.                       |           |                   |
-|                       | Submit invalid changes                         | Validation error prompts corrections.                                          |           |                   |
+| Sr. No. | Page                  | User Action                                     | Expected Result                                                                | Pass/Fail | Comments          |
+|---------|-----------------------|-------------------------------------------------|--------------------------------------------------------------------------------|-----------|-------------------|
+| 7       | Profile Page          | Order history is displayed by default.          | User can see their order history without additional actions.                   | ✅ Pass    |                   |
+| 7.1     |                       | User details are displayed by default, editable by the user. | User can edit information directly in the profile page.                       | ✅ Pass    |                   |
 
 ---
 
 #### **Admin Features**
 
-| Page                  | User Action                                      | Expected Result                                                                 | Pass/Fail | Comments          |
-|-----------------------|--------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
-| Manage Products       | Click "Add Product"                             | Redirected to the 'Add Product' page.                                           |           |                   |
-| Add Product           | Submit valid details                            | Product added. Redirected to product list. Toast confirms addition.             |           |                   |
-|                       | Submit invalid details                          | Validation error prompts corrections.                                          |           |                   |
-| Edit Product          | Submit valid changes                            | Product updates successfully. Toast confirms the update.                       |           |                   |
-| Delete Product        | Confirm deletion                                | Product removed. Toast confirms successful deletion.                           |           |                   |
+| Sr. No. | Page                  | User Action                                      | Expected Result                                                                 | Pass/Fail | Comments          |
+|---------|-----------------------|--------------------------------------------------|---------------------------------------------------------------------------------|-----------|-------------------|
+| 8       | Manage Products       | Click "Add Product"                             | Redirected to the 'Add Product' page.                                           | ✅ Pass    |                   |
+| 8.1     | Add Product           | Submit valid details                            | Product added. Redirected to product list. Toast confirms addition.             | ✅ Pass    |                   |
+| 8.2     |                       | Submit invalid details                          | Validation error prompts corrections.                                          | ✅ Pass    |                   |
+| 8.3     | Edit Product          | Submit valid changes                            | Product updates successfully. Toast confirms the update.                       | ✅ Pass    |                   |
+| 8.4     | Delete Product        | Confirm deletion                                | Product removed. Toast confirms successful deletion.                           | ✅ Pass    |                   |
 
 ---
 
