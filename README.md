@@ -517,14 +517,31 @@ Here is the updated table reflecting your changes:
 
 ### **Lighthouse Audit**
 
+### Updated Lighthouse Results Table with Explanation
+
 | Page                     | Performance | Accessibility | Best Practice | SEO | Comments                        |
 |--------------------------|-------------|---------------|---------------|-----|---------------------------------|
-| Homepage                 |             |               |               |     |                                 |
-| Products Page            |             |               |               |     |                                 |
-| Product Detail           |             |               |               |     |                                 |
-| Shopping Bag             |             |               |               |     |                                 |
-| Checkout                 |             |               |               |     |                                 |
-| Profile                  |             |               |               |     |                                 |
+| Homepage                 | 80          | 87            | 78            | 90  | Largest Contentful Paint could be optimized |
+| Products Page            | 57          | 87            | 78            | 91  | Slow rendering for images and high Largest Contentful Paint |
+| Product Detail           | 62          | 80            | 78            | 91  | High Largest Contentful Paint and Cumulative Layout Shift |
+| Shopping Bag             | 88          | 86            | 78            | 90  | Performs well, but images take time to load |
+| Checkout                 | 93          | 89            | 78            | 91  | Optimized performance and low layout shift |
+| Profile                  | 95          | 87            | 78            | 90  | Fast and responsive page with low blocking time |
+
+### Explanation of Performance Metrics
+
+The performance scores for certain pages, such as the **Homepage**, **Products Page**, and **Product Detail Page**, are impacted by the use of large, high-quality images. As **Dewi's Blooms** is an e-commerce platform for flowers, the visual appeal of products plays a vital role in customer decision-making. Shoppers depend heavily on detailed, high-resolution images to make informed choices when purchasing flowers for important occasions. While this trade-off slightly reduces performance, it ensures the customer can confidently select products.
+
+To address this, further optimizations such as compressing image sizes or implementing lazy loading could be explored while maintaining visual quality.
+
+### Screenshot List of Lighthouse Results
+
+1. **Homepage** - [Lighthouse Results Screenshot](./static/images/lhomepage.png)
+2. **Products Page** - [Lighthouse Results Screenshot](./static/images/lproductspage.png)
+3. **Product Detail** - [Lighthouse Results Screenshot](./static/images/lproductdetailpage.png)
+4. **Shopping Bag** - [Lighthouse Results Screenshot](./static/images/lshoppingbagpage.png)
+5. **Checkout** - [Lighthouse Results Screenshot](./static/images/lcheckoutpage.png)
+6. **Profile** - [Lighthouse Results Screenshot](./static/images/lprofilepage.png)
 
 ---
 + ### Browser Compatibility
