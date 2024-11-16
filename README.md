@@ -156,6 +156,24 @@ Dewi's Blooms not only highlights the beauty of flowers with high-quality imager
     ---
 
     By organizing Dewi's Blooms into these key structural components, the app delivers a cohesive experience for users, providing the functionality they expect while maintaining a professional and visually appealing design. This thoughtful structure ensures that both customers and administrators can interact with the site effectively and efficiently.
+---
+### Wireframes
+
+Below are the wireframes created to illustrate the intended layout and functionality of the Dewi's Blooms website. These wireframes were designed to ensure a user-friendly interface across different devices.
+
+1. **Homepage**
+   - ![Wireframe for Homepage - Mobile, Tablet, Desktop](./static/images/whome.png)
+
+2. **Login Page**
+   - ![Wireframe for Login Page - Mobile, Tablet, Desktop](./static/images/wlogin.png)
+
+3. **Shopping Window**
+   - ![Wireframe for Shop Window - Mobile, Tablet, Desktop](./static/images/wshopwindow.png)
+
+4. **Checkout Page**
+   - ![Wireframe for Checkout Page - Mobile, Tablet, Desktop](./static/images/wcheckout.png)
+
+---
 
 - ### **Surface**
     + #### Colour Scheme
@@ -910,12 +928,6 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
  I entered each CSS file separately and got No errors each time.
 
-Here are the tables for manual testing of Dewi's Blooms app that you can use to fill in the results for each feature:
-
----
-
-Here is the updated table reflecting your changes:
-
 ---
 
 ### **Manual Testing (Feature Testing)**
@@ -1014,12 +1026,12 @@ To address this, further optimizations such as compressing image sizes or implem
 
 ### Screenshot List of Lighthouse Results
 
-1. **Homepage** - [Lighthouse Results Screenshot](./static/images/lhomepage.png)
-2. **Products Page** - [Lighthouse Results Screenshot](./static/images/lproductspage.png)
-3. **Product Detail** - [Lighthouse Results Screenshot](./static/images/lproductdetailpage.png)
-4. **Shopping Bag** - [Lighthouse Results Screenshot](./static/images/lshoppingbagpage.png)
-5. **Checkout** - [Lighthouse Results Screenshot](./static/images/lcheckoutpage.png)
-6. **Profile** - [Lighthouse Results Screenshot](./static/images/lprofilepage.png)
+1. **Homepage** - ![Lighthouse Results Screenshot](./static/images/lhomepage.png)
+2. **Products Page** - ![Lighthouse Results Screenshot](./static/images/lproductspage.png)
+3. **Product Detail** - ![Lighthouse Results Screenshot](./static/images/lproductdetailpage.png)
+4. **Shopping Bag** - ![Lighthouse Results Screenshot](./static/images/lshoppingbagpage.png)
+5. **Checkout** - ![Lighthouse Results Screenshot](./static/images/lcheckoutpage.png)
+6. **Profile** - ![Lighthouse Results Screenshot](./static/images/lprofilepage.png)
 
 ---
 + ### Browser Compatibility
