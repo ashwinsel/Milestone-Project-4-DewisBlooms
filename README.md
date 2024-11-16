@@ -201,12 +201,6 @@ Our imagery not only enhances the site’s aesthetic but also underscores our co
 
 ## **Features**
 ------------
-Thank you for clarifying! Let’s review and only include features **actually implemented** in the Dewi's Blooms app. Here's a refined list based on typical functionality for your app:
-
----
-
-### **Features in Dewi's Blooms**
-
 #### **1. Homepage**
 - **Featured Products**:
   - Display a selection of highlighted flowers or arrangements.
@@ -294,24 +288,194 @@ Thank you for clarifying! Let’s review and only include features **actually im
   - Enhanced browsing experience for larger screens.
 
 ---
+### **Future Development and Implementation Options**
 
-If there are additional features or specifics you'd like added or removed, let me know, and we can refine this further!
+### **1. Improved Image Optimization and Performance**
+- **Current Challenge**: High-quality images have negatively impacted the site's performance, particularly on slower connections.
+- **Future Plan**:
+  - Implement lazy loading for images to reduce initial page load times.
+  - Use next-generation image formats like WebP for better compression without compromising quality.
+  - Incorporate an image CDN (e.g., Cloudinary) to deliver optimized images based on the user's location and device.
 
+---
 
+### **2. Personalized Recommendations**
+- **Why**: Providing tailored recommendations can boost customer engagement and sales.
+- **Implementation**:
+  - Use machine learning algorithms or integrate third-party recommendation systems to suggest products based on user preferences and purchase history.
+  - Add a "Recently Viewed" or "Recommended for You" section on the homepage and product pages.
+
+---
+
+### **3. Flower Subscription Service**
+- **Why**: Many customers may appreciate receiving flowers regularly for personal enjoyment or gifting.
+- **Implementation**:
+  - Offer subscription plans (e.g., weekly, bi-weekly, or monthly) with discounted rates for recurring deliveries.
+  - Include customization options like preferred flower types, colors, and sizes.
+
+---
+
+### **4. Expanded Payment Options**
+- **Why**: Offering more payment methods increases accessibility and customer satisfaction.
+- **Implementation**:
+  - Add PayPal, Apple Pay, and Google Pay as alternative payment options alongside Stripe.
+  - Integrate options for Buy Now, Pay Later services (e.g., Klarna or Afterpay).
+
+---
+
+### **5. Customer Loyalty Program**
+- **Why**: Encourages repeat purchases and builds long-term customer relationships.
+- **Implementation**:
+  - Introduce a points-based reward system where customers earn points on every purchase, which can be redeemed for discounts or free products.
+  - Provide exclusive offers and early access to sales for loyal customers.
+
+---
+
+### **6. Advanced Product Filters**
+- **Why**: Enhanced filters make it easier for users to find what they’re looking for quickly.
+- **Implementation**:
+  - Add filters for flower type, price range, occasion, delivery date, and color.
+  - Enable sorting by popularity, reviews, and availability.
+
+---
+
+### **7. Multi-Language and Multi-Currency Support**
+- **Why**: Expanding globally requires addressing diverse customer needs.
+- **Implementation**:
+  - Add translation options for key languages (e.g., Welsh, French, German).
+  - Allow users to select their preferred currency for pricing and checkout.
+
+---
+
+### **8. Social Media Integration**
+- **Why**: Encourages engagement and boosts brand awareness.
+- **Implementation**:
+  - Add social sharing buttons on product pages to allow customers to share their favorite products.
+  - Enable login and registration using social media accounts for easier access.
+
+---
+
+### **9. Mobile App Development**
+- **Why**: Mobile users account for a significant percentage of online shoppers.
+- **Implementation**:
+  - Develop a mobile app for iOS and Android with all features from the web app.
+  - Include push notifications for order updates, special offers, and reminders for saved dates.
+
+---
+
+### **10. Augmented Reality (AR) Feature**
+- **Why**: Allows customers to visualize floral arrangements in their spaces, increasing purchase confidence.
+- **Implementation**:
+  - Use AR technology to enable users to view how bouquets or arrangements would look on their table or home environment.
+  - Provide interactive 360° views of products.
+
+---
+
+### **11. Expanded User Account Features**
+- **Why**: Enhancing user accounts encourages retention and repeat usage.
+- **Implementation**:
+  - Allow customers to save multiple delivery addresses for gifting purposes.
+  - Provide the option to save special occasions and set recurring reminders for gifting.
+
+---
+
+### **12. Enhanced Admin Features**
+- **Why**: Simplifies management and streamlines operations.
+- **Implementation**:
+  - Add an admin dashboard with sales analytics, order trends, and inventory management.
+  - Enable bulk product uploads and updates to save time.
+
+---
+
+### **13. Enhanced Accessibility Features**
+- **Why**: Ensures usability for all customers, including those with disabilities.
+- **Implementation**:
+  - Add features like font resizing, color contrast adjustment, and screen reader support.
+  - Follow Web Content Accessibility Guidelines (WCAG) to make the platform universally accessible.
+
+---
+
+### **14. Reviews and Ratings System**
+- **Why**: Builds trust and assists new customers in making purchasing decisions.
+- **Implementation**:
+  - Allow customers to leave reviews and rate products after purchase.
+  - Add a “Top Rated” section showcasing highly reviewed products.
+
+---
+
+### **15. Gift Cards and Gift Wrapping Options**
+- **Why**: Appeals to customers looking for versatile gifting options.
+- **Implementation**:
+  - Enable customers to purchase and send digital gift cards.
+  - Offer gift-wrapping services with customizable messages for added personalization.
+
+---
+
+### **16. Environmental Sustainability Features**
+- **Why**: Appeals to eco-conscious customers and supports sustainability.
+- **Implementation**:
+  - Highlight eco-friendly products or packaging.
+  - Allow customers to offset their carbon footprint by adding a small contribution to their purchase for tree-planting initiatives.
 ---
 
 ## **Technologies Used**
 ------------
+### **Technologies Used**
 
-- ### **Languages Used**
-    * **HTML5**, **CSS3**, **JavaScript**, **Python3**
+#### **Backend Technologies**
+- **Django (5.1.2)**: A high-level Python web framework used to build the core backend functionality of the application.
+- **Django-Allauth (65.1.0)**: For user authentication, registration, and account management.
+- **Django-Crispy-Forms (1.14.0)**: Enhances the presentation and functionality of forms, providing a better user experience.
+- **Django-Countries (7.2.1)**: Allows users to select countries in forms using a standardized dropdown field.
+- **Django-Storages (1.14.4)**: Simplifies integration with AWS S3 for media file storage.
+- **Gunicorn (23.0.0)**: A Python WSGI HTTP server used for deploying the application on Heroku.
 
-- ### **Frameworks, Libraries, and Programs Used**
-    * **Django**: Backend framework for authentication, database interactions, and routing.
-    * **django-allauth**: Used for user registration, login, and account management.
-    * **Stripe**: For secure payments.
-    * **Bootstrap5**: For responsive design and easy-to-use UI components.
+#### **Database Technologies**
+- **dj-database-url (0.5.0)**: Simplifies database configuration for deployment using environment variables.
+- **psycopg2 (2.9.10)**: A PostgreSQL database adapter for Python, used to manage the project's relational database.
+- **psycopg2-binary (2.9.10)**: Provides a pre-compiled version of psycopg2 for easier installation.
 
+#### **Payment Integration**
+- **Stripe (11.2.0)**: A secure payment processing service integrated into the application for handling transactions.
+- **Stripe.js (v3)**: Frontend JavaScript library provided by Stripe to manage secure card input and processing.
+
+#### **Media Management**
+- **Pillow (11.0.0)**: A Python Imaging Library used to manage and process images.
+
+#### **Cloud Storage**
+- **Boto3 (1.35.51)**: AWS SDK for Python, enabling integration with AWS services, specifically S3 for media storage.
+- **Botocore (1.35.51)**: A low-level interface to AWS services, used alongside Boto3.
+- **S3Transfer (0.10.3)**: A tool to manage file transfers to and from AWS S3.
+
+#### **Frontend Technologies**
+- **Bootstrap (4.4.1)**: A CSS framework for responsive design and styling.
+- **Font Awesome**: For adding scalable vector icons and social media logos.
+- **Google Fonts**:
+  - **Dancing Script**: A decorative font used for branding and styling headers.
+
+#### **Favicon and Manifest Integration**
+- **Favicon and Webmanifest**:
+  - Favicon files (32x32, 16x16, and .ico formats) for browser tab icons.
+  - Webmanifest to ensure progressive web app compatibility.
+
+#### **JavaScript Libraries**
+- **jQuery (3.4.1)**: A lightweight JavaScript library for DOM manipulation and event handling.
+- **Popper.js (1.16.0)**: A library used for managing pop-ups and tooltips in conjunction with Bootstrap.
+
+#### **Web Server Tools**
+- **asgiref (3.8.1)**: A Python ASGI server interface used by Django for asynchronous support.
+- **sqlparse (0.5.1)**: A library for parsing SQL queries, used internally by Django for managing database queries.
+
+#### **Time Zone Management**
+- **Pytz (2024.2)**: A library to handle time zones consistently across the application.
+
+#### **Environment Management**
+- **Django-Environ (0.11.2)**: For securely managing environment variables in the application.
+
+#### **Dependencies**
+- **Setuptools (75.5.0)**: A package development and distribution library used to manage the application's dependencies.
+
+These technologies collectively ensure the Dewi's Blooms e-commerce platform is feature-rich, responsive, secure, and user-friendly while maintaining scalability for future enhancements.
 ---
 
 ## **Custom Models and Database Schema**
@@ -404,6 +568,320 @@ We have **two custom models** in this project:
 
 The project has **two custom models**: `Order` and `UserProfile`. These models are unique to the application, designed to manage data that Django's default models (like `User` or `Session`) don’t cover. The custom models provide flexibility and extend Django's built-in functionality, allowing site owner to store and manage additional information specific to shop/project requirements.
 
+### **List of Bugs and Fixes**
+---
+
+#### **1. Environment Variable Not Found (`KeyError: 'SECRET_KEY'`)**
+   - **Bug**:
+     `KeyError` occurred because the `SECRET_KEY` was not being recognized in the environment.
+   - **Fix**:
+     - Verified the `env.py` file included the `SECRET_KEY`.
+     - Ensured `env.py` was correctly imported in `settings.py`.
+     - Confirmed the `env.py` file was excluded from `.gitignore` to prevent accidental uploads.
+     - Resolved by sourcing `env.py` properly in the settings.
+
+---
+
+#### **2. Emails Not Being Sent**
+   - **Bug**:
+     Email functionality wasn't working, and no confirmation emails were received.
+   - **Fix**:
+     - Ensured `EMAIL_BACKEND` was set correctly in `settings.py`.
+     - Updated SMTP configuration with the correct `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD`.
+     - Tested email functionality locally using the console email backend for development:
+       ```python
+       EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+       ```
+     - Deployed a production-ready email backend using Gmail SMTP for Heroku.
+
+---
+
+#### **3. Webhook Confirmation Email Not Sent**
+   - **Bug**:
+     Webhooks from Stripe were not triggering confirmation emails.
+   - **Fix**:
+     - Added a `_send_confirmation_email` method to the webhook handler.
+     - Verified Stripe metadata and ensured `email` was passed correctly.
+     - Ensured the webhook URL was configured correctly in the Stripe dashboard.
+
+---
+
+#### **4. Parse Errors in Templates**
+   - **Bug**:
+     Validation errors like `Parse Error` due to malformed template syntax or missing tags.
+   - **Fix**:
+     - Corrected errors such as:
+       - Missing `{% endblock %}` or misplaced `{% block content %}` tags.
+       - Incorrect usage of `load static`.
+       - Example fix:
+         ```html
+         {% load static %}
+         <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+         ```
+     - Performed validation on the updated templates to confirm no syntax errors remained.
+
+---
+
+#### **5. Validation Errors in Admin**
+   - **Bug**:
+     Admin errors like `admin.E108` occurred when attributes in `list_display` referred to fields not available in the model.
+   - **Fix**:
+     - Verified `OrderAdmin` used correct fields in `list_display`.
+     - Removed invalid fields (`'original_bag'` and `'stripe_pid'`) or ensured these fields were added to the model.
+
+---
+
+#### **6. Errors in `manage.py` Commands**
+   - **Bug**:
+     Running `createsuperuser` or querying superusers in the Django shell led to confusion or invalid syntax issues.
+   - **Fix**:
+     - Clarified that `python manage.py createsuperuser` must be run in the terminal, not in the Django shell.
+     - Provided a script to list superusers using:
+       ```python
+       from django.contrib.auth.models import User
+       User.objects.filter(is_superuser=True)
+       ```
+
+---
+
+#### **7. Hard Reset Git Issue**
+   - **Bug**:
+     Required reverting back to a specific commit but was unsure of steps.
+   - **Fix**:
+     - Used Git commands to safely reset to the required commit:
+       ```bash
+       git reset --hard <commit-hash>
+       ```
+     - Ensured uncommitted changes were backed up before performing a reset.
+
+---
+
+#### **8. Stripe Webhook Validation and Orders**
+   - **Bug**:
+     Orders weren't being created during webhook execution.
+   - **Fix**:
+     - Verified metadata in Stripe payment intent contained the correct fields (`username`, `save_info`).
+     - Ensured the `handle_payment_intent_succeeded` method correctly fetched or created orders.
+     - Added robust error handling and retries to ensure order creation completed successfully.
+
+---
+
+#### **9. Missing ERD**
+   - **Bug**:
+     Required a visual representation of the Entity-Relationship Diagram (ERD).
+   - **Fix**:
+     - Generated the ERD using `django-extensions` and visualized relationships between models.
+
+---
+
+#### **10. Heroku Deployment and Missing Configurations**
+   - **Bug**:
+     Deployment to Heroku failed due to missing configurations (e.g., `DISABLE_COLLECTSTATIC`, AWS, Stripe keys).
+   - **Fix**:
+     - Added necessary environment variables (`SECRET_KEY`, `DATABASE_URL`, `STRIPE_*`, `AWS_*`).
+     - Set `DISABLE_COLLECTSTATIC=1` for Heroku builds.
+     - Verified all production dependencies were installed and added to `requirements.txt`.
+
+---
+
+#### **11. Static Files Not Loading in Production**
+   - **Bug**:
+     Static files were not served correctly in production on Heroku.
+   - **Fix**:
+     - Configured AWS S3 for static and media files:
+       ```python
+       STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+       ```
+     - Verified `AWS_*` environment variables were set correctly in Heroku.
+
+---
+
+#### **12. Unit Tests for Models**
+   - **Bug**:
+     Required tests for custom models and relationships.
+   - **Fix**:
+     - Added tests in `tests.py` to validate model relationships and methods.
+     - Example:
+       ```python
+       def test_order_creation(self):
+           user = User.objects.create_user(username='testuser', password='12345')
+           profile = UserProfile.objects.create(user=user)
+           order = Order.objects.create(user_profile=profile, ...)
+           self.assertEqual(order.user_profile, profile)
+       ```
+
+---
+
+#### **13. Invalid Migration Error**
+   - **Bug**:
+     Database migrations caused errors.
+   - **Fix**:
+     - Inspected migration files for consistency.
+     - Used:
+       ```bash
+       python manage.py makemigrations
+       python manage.py migrate
+       ```
+     - Resolved conflicts by recreating migrations.
+
+
+---
+
+#### **1. Large Image Sizes Affecting Performance**
+- **Description**: Lighthouse audits showed poor performance due to large high-quality images used on product and homepage.
+- **Cause**: High-resolution images were loaded directly, increasing load times and reducing performance scores.
+- **Fix**:
+  - Resized and optimized images before uploading them to AWS S3.
+  - Implemented lazy loading for images using the `loading="lazy"` attribute.
+  - Adjusted image quality during upload to balance clarity with file size.
+
+---
+
+#### **2. Incorrect Image Rendering on Safari**
+- **Description**: Some images did not render correctly on Safari.
+- **Cause**: Safari has specific requirements for image rendering, and some images were not optimized for cross-browser compatibility.
+- **Fix**:
+  - Converted all images to supported formats like PNG and JPEG.
+  - Verified that all images were properly encoded and compliant with browser standards.
+
+---
+
+#### **3. Missing Favicon**
+- **Description**: Browser tabs showed a default icon instead of the custom favicon.
+- **Cause**: The favicon was not correctly referenced in the `base.html` template.
+- **Fix**:
+  - Uploaded the favicon files to the AWS S3 bucket.
+  - Updated the `<link>` tags in the `base.html` file to correctly point to the favicon files using `{% static %}`.
+
+---
+
+#### **4. Products Page Performance Issues**
+- **Description**: Lighthouse performance score for the products page was low, primarily due to a slow "Largest Contentful Paint" (LCP).
+- **Cause**: The main product images were not properly optimized, and CSS was loaded synchronously.
+- **Fix**:
+  - Optimized images as described earlier.
+  - Moved critical CSS inline and deferred non-essential CSS and JavaScript.
+
+---
+
+#### **5. Search Bar Not Returning Results**
+- **Description**: Users reported that searching for certain product names returned no results, even when the product existed.
+- **Cause**: The search functionality did not account for case-insensitivity or partial matches.
+- **Fix**:
+  - Updated the search query to use `__icontains` in the Django ORM, enabling case-insensitive partial matches.
+  - Added error handling to display a user-friendly message when no results are found.
+
+---
+
+#### **6. Toast Messages Misaligned on Mobile Devices**
+- **Description**: Toast notifications appeared off-screen or were partially cut off on smaller devices.
+- **Cause**: Toast positioning was fixed, which did not account for smaller screen sizes.
+- **Fix**:
+  - Updated CSS to use responsive positioning for toast messages.
+  - Added media queries to ensure correct alignment on all screen sizes.
+
+---
+
+#### **7. Checkout Form Validation Failing**
+- **Description**: Some users could not proceed with checkout due to errors, even with valid input.
+- **Cause**: Missing `required` attributes on some form fields.
+- **Fix**:
+  - Reviewed and updated all form fields to include `required` attributes.
+  - Added server-side validation to ensure data integrity.
+
+---
+
+#### **8. Stripe Payment Webhook Errors**
+- **Description**: Payments were processed successfully, but webhook calls to update the order status failed intermittently.
+- **Cause**: Stripe webhook endpoint was not correctly configured to handle certain responses.
+- **Fix**:
+  - Updated the webhook view to correctly handle all potential responses from Stripe.
+  - Added logging to debug and identify future webhook-related issues.
+
+---
+
+#### **9. Profile Page Default Information Not Pre-filled**
+- **Description**: Users reported that their profile information (e.g., address) was not pre-filled when editing.
+- **Cause**: Profile form was not initialized with user data from the database.
+- **Fix**:
+  - Modified the profile view to pre-populate the form fields with the user's saved data.
+
+---
+
+#### **10. Navbar Links Not Highlighted on Active Page**
+- **Description**: Users could not easily identify which page they were on as the active page link was not highlighted.
+- **Cause**: The `active` class was missing in the navbar template for the current page.
+- **Fix**:
+  - Used Django's `{% if request.path %}` template tag to dynamically add the `active` class to the current page's link in the navbar.
+
+---
+
+#### **11. Pagination Fails on Products Page**
+- **Description**: Pagination did not display all products when navigating through pages.
+- **Cause**: Incorrect handling of pagination query parameters in the product view.
+- **Fix**:
+  - Updated the view to correctly handle pagination parameters.
+  - Added test cases to ensure pagination works as expected.
+
+---
+
+#### **12. Order History Page Has No Clickable Links**
+- **Description**: Users could not click on individual orders to view their details.
+- **Cause**: No links were provided for each order in the template.
+- **Fix**:
+  - Added clickable links for each order that redirected to the order detail page.
+  - Included order details such as product name, quantity, and total price on the linked page.
+
+---
+
+#### **13. Search Results Show Duplicate Products**
+- **Description**: Searching for a product sometimes returned duplicate entries in the results.
+- **Cause**: Query did not filter out duplicate results.
+- **Fix**:
+  - Used the `.distinct()` method in the Django ORM to ensure only unique results were returned.
+
+---
+
+#### **14. AWS S3 Upload Issues**
+- **Description**: Media files uploaded to the AWS S3 bucket were not accessible from the app.
+- **Cause**: Incorrect bucket permissions and missing environment variables.
+- **Fix**:
+  - Updated the AWS S3 bucket permissions to allow public read access to media files.
+  - Added and verified all required environment variables, including `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+
+---
+
+#### **15. Footer Links Not Opening in a New Tab**
+- **Description**: Social media links in the footer did not open in a new tab.
+- **Cause**: Missing `target="_blank"` attribute in anchor tags.
+- **Fix**:
+  - Updated all external links in the footer to include the `target="_blank"` attribute.
+
+### Unresolved Bugs
+Here are the additional bugs identified during testing that remain unresolved:
+
+---
+
+1. **Toast Notification Persistence (Screenshot Attached)**  
+   - **Bug Description**: After logging in, a toast notification confirming login success remains visible on the screen until the page is refreshed manually.
+   - **Impact**: This might confuse users, as they expect the toast to disappear automatically after a short duration. 
+   - **Status**: Not fixed.
+
+---
+
+2. **Login/Signup Input Validation Field Stays Red**
+   - **Bug Description**: When a user enters invalid credentials during login or signup, the input field border turns red as a validation indicator. However, the field remains red even after entering valid input and clearing the prompt.
+   - **Impact**: Can lead to user frustration and a perception that the input is still invalid even after correction.
+   - **Status**: Not fixed.
+
+---
+
+3. **Incorrect Rating Calculation**
+   - **Bug Description**: When a user submits a new rating for a product, the rating displayed on the product changes to the user's submitted value instead of updating to an average of all ratings.
+   - **Impact**: Misrepresents the product rating and misleads users about overall customer feedback.
+   - **Status**: Not fixed.
+
+---
 ## **Testing**
 ------------
 
@@ -583,7 +1061,101 @@ To address this, further optimizations such as compressing image sizes or implem
     python manage.py migrate
     ```
 ---
-## **Credits**
+
+### **Project Summary**
+
+#### **1. Design, Develop, and Implement a Full Stack Web Application**
+- **Relational Database Integration**: Dewi's Blooms implements a robust relational database with clear entity relationships using Django's ORM. The schema is documented in the README file and supports full CRUD functionality for products, user profiles, orders, and reminders.
+- **Multiple Reusable Apps**: The project is structured with modular Django apps, such as `products`, `profiles`, `checkout`, and `shopping_bag`, ensuring reusability and scalability.
+- **Interactive Frontend**: The website features a responsive UI designed with Bootstrap, adhering to UX principles. All user actions (e.g., adding items to the cart) immediately update the interface, providing a seamless experience.
+- **Forms and Validation**: Forms are implemented for account management, checkout, and product CRUD actions (for admins). These forms include validation to ensure data integrity.
+
+#### **2. Relational Data Model and Features**
+- **Data Model**: The relational schema is built with clear relationships (e.g., products, categories, and orders). Models like `Product`, `Category`, `Order`, and `UserProfile` are implemented to handle specific use cases.
+- **Business Logic**: Django views handle complex business logic, such as dynamically calculating total cart value or validating stock availability during checkout.
+- **Validation and Feedback**: All forms provide clear feedback to users. For example, users are notified if a product is out of stock during checkout.
+
+#### **3. Authentication, Authorization, and Permissions**
+- **Authentication**: `django-allauth` is used to handle secure user authentication. Users can register, log in, and reset their passwords easily.
+- **Authorization**: Specific actions, such as adding or editing products, are restricted to admin users. Non-authenticated users are redirected to the login page when trying to access protected views.
+- **Permissions**: Backend checks ensure non-admin users cannot directly modify the database or access restricted pages.
+
+#### **4. E-Commerce Payment System**
+- **Stripe Integration**: Secure payment processing is integrated using Stripe. Users can complete purchases with test card details, and success/failure messages are displayed post-checkout.
+- **Shopping Bag**: The shopping bag dynamically updates as users add or remove items. Prices and totals are calculated in real-time.
+- **Cloud Hosting**: The project is deployed on Heroku with AWS S3 for media file storage, ensuring scalability and reliability.
+
+#### **5. Git-Based Version Control and Documentation**
+- **Version Control**: The project has a well-documented git history, with meaningful commit messages reflecting feature development and bug fixes.
+- **Deployment Documentation**: The deployment process is detailed in the README, including setup steps for Heroku, AWS S3, and Stripe configuration.
+- **README Documentation**: The README is well-structured, covering project purpose, features, database schema, testing procedures, and user instructions.
+
+---
+
+### **How Dewi's Blooms Excels**
+
+#### **UX Design and Accessibility**
+- The website is fully responsive and accessible, with clear navigation and intuitive design elements. Users can browse products, manage their profiles, and complete purchases easily.
+
+#### **Testing and Error Handling**
+- Comprehensive manual testing has been conducted to ensure all features work as expected. Errors are gracefully handled, and users receive appropriate feedback.
+
+#### **Security Best Practices**
+- Sensitive information like API keys and database credentials are securely stored in environment variables. DEBUG mode is disabled in production.
+
+#### **Real-World Application**
+- Dewi's Blooms caters to a real-world need for online florist services, allowing users to order flowers for specific occasions. The project addresses user needs by integrating reminders for special dates and personalized shopping experiences.
+
+#### **Code Quality and Organization**
+- The code adheres to PEP-8 standards, and the file structure is logical and consistent. Reusable components and Django conventions are followed throughout.
+
+---
+
+### **Challenges and Decisions**
+While prioritizing image quality to showcase products effectively, some compromises were made on performance. High-quality images are crucial for an e-commerce florist, as customers rely heavily on visuals to make purchasing decisions. Measures to improve performance, such as optimizing image sizes, are under consideration for future iterations.
+
+---
+### **Credits**
+
+Throughout the development of **Dewi's Blooms**, inspiration, guidance, and support were taken from a variety of sources, including similar e-commerce applications, educational tutorials, walkthroughs, and mentorship. Below is a detailed list of acknowledgments:
+
+---
+
+#### **1. Similar E-Commerce Applications**
+The following e-commerce sites served as inspiration for designing and developing Dewi's Blooms, particularly in areas like user experience, navigation, and functionality:
+
+- **[Bloom & Wild](https://www.bloomandwild.com/):** The personalized product suggestions, clean design, and focus on flowers for every occasion were pivotal in shaping Dewi's Blooms.
+- **[Interflora](https://www.interflora.co.uk/):** Inspired ideas for checkout flow, navigation, and customer account management.
+- **[Arena Flowers](https://www.arenaflowers.com/):** The product filtering, search options, and use of high-quality product images informed similar features in Dewi's Blooms.
+
+---
+
+#### **2. Tutorials and Walkthroughs**
+The following tutorials and walkthrough projects were instrumental in providing a strong foundation and guidance:
+
+- **[Code Institute Boutique Ado Walkthrough](https://codeinstitute.net/):** This walkthrough project provided detailed insights into building an e-commerce site with Django, including user authentication, product management, and Stripe integration.
+- **[Code with Harry](https://www.codewithharry.com/):** His tutorials on Django and full-stack development were incredibly helpful in understanding the core principles of Django models, views, and templates.
+- **[Code Institute](https://codeinstitute.net/):** The structure and setup of the project were heavily influenced by resources and practices taught during the Full-Stack Development course.
+
+---
+
+#### **3. Mentors and Tutors**
+The mentorship and tutoring provided by the following individuals were invaluable in overcoming challenges and refining the project:
+
+- **Mentor Dick Vlanderen:** Provided consistent guidance and support throughout the project, offering valuable insights into improving performance, debugging, and adhering to best practices.
+- **Code Institute Tutor Thomas:** Helped address specific technical challenges, including troubleshooting bugs, refining functionality, and integrating features like Stripe payment processing.
+
+---
+
+#### **4. Open-Source Libraries and Tools**
+Many open-source libraries and tools made this project possible. Some notable mentions include:
+
+- **Django Framework**: Used for building the backend, handling authentication, and implementing product management.
+- **Stripe API**: Securely processed payments, making the checkout experience seamless.
+- **Bootstrap**: Provided a responsive and mobile-friendly front-end design.
+- **Font Awesome**: Used for icons across the app.
+- **Google Fonts**: For the custom "Dancing Script" font used in the logo and decorative sections.
+
 ------------
 
 ### **Acknowledgements**
