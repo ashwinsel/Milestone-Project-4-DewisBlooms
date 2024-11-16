@@ -33,24 +33,42 @@ Dewi's Blooms not only highlights the beauty of flowers with high-quality imager
 ## **Index - Table of Contents**
 ------------
 
-+ [User Experience (UX)](#user-experience-ux)
-    * [User Stories](#user-stories)
-        - [First Time Visitor Goals](#first-time-visitor-goals)
-        - [Returning Visitor Goals](#returning-visitor-goals)
-        - [Frequent User Goals](#frequent-user-goals)       
-+ [UX Planes](#ux-planes)
-    * [Strategy](#strategy)
-    * [Scope](#scope)
-    * [Structure](#structure)
-    * [Surface](#surface)
-+ [Features](#features)
-+ [Technologies Used](#technologies-used)
-+ [Custom Models and Database Schema](#custom-models-and-database-schema)
-    * [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-+ [Testing](#testing)
-+ [Deployment](#deployment)
-+ [Credits](#credits)
-+ [Gratitude](#gratitude)
+1. [Introduction](#introduction)
+2. [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+3. [UX Planes](#ux-planes)
+    - [Strategy](#strategy)
+    - [Scope](#scope)
+    - [Structure](#structure)
+    - [Surface](#surface)
+4. [Wireframes](#wireframes)
+5. [Features](#features)
+    - [Homepage](#1-homepage)
+    - [Shop Page](#2-shop-page)
+    - [Product Detail Page](#3-product-detail-page)
+    - [Shopping Cart](#4-shopping-cart)
+    - [Checkout Page](#5-checkout-page)
+    - [User Accounts](#6-user-accounts)
+    - [Admin Features](#7-admin-features)
+    - [Responsive Design](#8-responsive-design)
+6. [Future Development and Implementation Options](#future-development-and-implementation-options)
+7. [Technologies Used](#technologies-used)
+8. [Custom Models and Database Schema](#custom-models-and-database-schema)
+    - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+9. [List of Bugs and Fixes](#list-of-bugs-and-fixes)
+10. [Testing](#testing)
+    - [Validator Testing Results](#validator-testing-results)
+    - [Manual Testing (Feature Testing)](#manual-testing-feature-testing)
+11. [Lighthouse Audit](#lighthouse-audit)
+12. [Deployment](#deployment)
+    - [Heroku Deployment](#heroku-deployment)
+    - [Email Configuration](#email-configuration)
+    - [Stripe Setup](#stripe-setup)
+    - [Clone the Project](#clone-the-project)
+13. [Project Summary](#project-summary)
+14. [Credits](#credits)
+15. [Acknowledgements](#acknowledgements)
+16. [Gratitude](#gratitude)
 
 ---
 
@@ -80,6 +98,8 @@ Dewi's Blooms not only highlights the beauty of flowers with high-quality imager
 | **5. Notifications and Reminders**  | Admin                         | View customer orders                                         | Fulfill orders and manage stock effectively                 |
 | **6. Admin Features**               | Admin                         | Add, edit, or remove products                                | Keep the product catalog up to date                         |
 |                                     | Admin                         | Manage customer orders                                       | Ensure efficient order processing and delivery              |
+
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ---
 
@@ -156,6 +176,9 @@ Dewi's Blooms not only highlights the beauty of flowers with high-quality imager
     ---
 
     By organizing Dewi's Blooms into these key structural components, the app delivers a cohesive experience for users, providing the functionality they expect while maintaining a professional and visually appealing design. This thoughtful structure ensures that both customers and administrators can interact with the site effectively and efficiently.
+
+    [Back to Index - Table of Contents](#index---table-of-contents)
+
 ---
 ### Wireframes
 
@@ -172,6 +195,8 @@ Below are the wireframes created to illustrate the intended layout and functiona
 
 4. **Checkout Page**
    - ![Wireframe for Checkout Page - Mobile, Tablet, Desktop](./static/images/wcheckout.png)
+
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ---
 
@@ -215,8 +240,9 @@ This typography balances sophistication and usability, reinforcing the boutique 
 
 Our imagery not only enhances the site’s aesthetic but also underscores our commitment to quality and authenticity, making the shopping experience delightful and trustworthy.
 
----
+[Back to Index - Table of Contents](#index---table-of-contents)
 
+---
 ## **Features**
 ------------
 #### **1. Homepage**
@@ -304,6 +330,8 @@ Our imagery not only enhances the site’s aesthetic but also underscores our co
   - Fully optimized for smartphones and tablets.
 - **Desktop Compatibility**:
   - Enhanced browsing experience for larger screens.
+
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ---
 ### **Future Development and Implementation Options**
@@ -435,8 +463,8 @@ Our imagery not only enhances the site’s aesthetic but also underscores our co
   - Highlight eco-friendly products or packaging.
   - Allow customers to offset their carbon footprint by adding a small contribution to their purchase for tree-planting initiatives.
 ---
+[Back to Index - Table of Contents](#index---table-of-contents)
 
-## **Technologies Used**
 ------------
 ### **Technologies Used**
 
@@ -493,7 +521,8 @@ Our imagery not only enhances the site’s aesthetic but also underscores our co
 #### **Dependencies**
 - **Setuptools (75.5.0)**: A package development and distribution library used to manage the application's dependencies.
 
-These technologies collectively ensure the Dewi's Blooms e-commerce platform is feature-rich, responsive, secure, and user-friendly while maintaining scalability for future enhancements.
+[Back to Index - Table of Contents](#index---table-of-contents)
+
 ---
 
 ## **Custom Models and Database Schema**
@@ -557,6 +586,8 @@ Table to compare 2 custom models, fields, and data entries in the context of the
 
 This table provides a clear mapping of your Django models to database tables and their fields.
 
+[Back to Index - Table of Contents](#index---table-of-contents)
+
 ### 1. Understanding Custom Models
 
 ### Identifying Custom Models
@@ -582,9 +613,9 @@ We have **two custom models** in this project:
 | **User**     | Built-in           | Handles basic authentication (Django provides this automatically). |
 | **Session**  | Built-in           | Manages user sessions (Django manages this automatically).        |
 
-### Summary
-
 The project has **two custom models**: `Order` and `UserProfile`. These models are unique to the application, designed to manage data that Django's default models (like `User` or `Session`) don’t cover. The custom models provide flexibility and extend Django's built-in functionality, allowing site owner to store and manage additional information specific to shop/project requirements.
+
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ### **List of Bugs and Fixes**
 ---
@@ -714,22 +745,6 @@ The project has **two custom models**: `Order` and `UserProfile`. These models a
 
 ---
 
-#### **12. Unit Tests for Models**
-   - **Bug**:
-     Required tests for custom models and relationships.
-   - **Fix**:
-     - Added tests in `tests.py` to validate model relationships and methods.
-     - Example:
-       ```python
-       def test_order_creation(self):
-           user = User.objects.create_user(username='testuser', password='12345')
-           profile = UserProfile.objects.create(user=user)
-           order = Order.objects.create(user_profile=profile, ...)
-           self.assertEqual(order.user_profile, profile)
-       ```
-
----
-
 #### **13. Invalid Migration Error**
    - **Bug**:
      Database migrations caused errors.
@@ -834,15 +849,6 @@ The project has **two custom models**: `Order` and `UserProfile`. These models a
 
 ---
 
-#### **11. Pagination Fails on Products Page**
-- **Description**: Pagination did not display all products when navigating through pages.
-- **Cause**: Incorrect handling of pagination query parameters in the product view.
-- **Fix**:
-  - Updated the view to correctly handle pagination parameters.
-  - Added test cases to ensure pagination works as expected.
-
----
-
 #### **12. Order History Page Has No Clickable Links**
 - **Description**: Users could not click on individual orders to view their details.
 - **Cause**: No links were provided for each order in the template.
@@ -868,19 +874,14 @@ The project has **two custom models**: `Order` and `UserProfile`. These models a
   - Added and verified all required environment variables, including `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
 
 ---
-
-#### **15. Footer Links Not Opening in a New Tab**
-- **Description**: Social media links in the footer did not open in a new tab.
-- **Cause**: Missing `target="_blank"` attribute in anchor tags.
-- **Fix**:
-  - Updated all external links in the footer to include the `target="_blank"` attribute.
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ### Unresolved Bugs
 Here are the additional bugs identified during testing that remain unresolved:
 
 ---
 
-1. **Toast Notification Persistence (Screenshot Attached)**  
+1. **Toast Notification Persistence (Screenshot Attached)** ![bug](./static/images/bug1.png) 
    - **Bug Description**: After logging in, a toast notification confirming login success remains visible on the screen until the page is refreshed manually.
    - **Impact**: This might confuse users, as they expect the toast to disappear automatically after a short duration. 
    - **Status**: Not fixed.
@@ -899,6 +900,7 @@ Here are the additional bugs identified during testing that remain unresolved:
    - **Impact**: Misrepresents the product rating and misleads users about overall customer feedback.
    - **Status**: Not fixed.
 
+[Back to Index - Table of Contents](#index---table-of-contents)
 ---
 ## **Testing**
 ------------
@@ -928,6 +930,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
  I entered each CSS file separately and got No errors each time.
 
+[Back to Index - Table of Contents](#index---table-of-contents)
 ---
 
 ### **Manual Testing (Feature Testing)**
@@ -1003,6 +1006,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | 8.3     | Edit Product          | Submit valid changes                            | Product updates successfully. Toast confirms the update.                       | ✅ Pass    |                   |
 | 8.4     | Delete Product        | Confirm deletion                                | Product removed. Toast confirms successful deletion.                           | ✅ Pass    |                   |
 
+[Back to Index - Table of Contents](#index---table-of-contents)
 ---
 
 ### **Lighthouse Audit**
@@ -1033,12 +1037,13 @@ To address this, further optimizations such as compressing image sizes or implem
 5. **Checkout** - ![Lighthouse Results Screenshot](./static/images/lcheckoutpage.png)
 6. **Profile** - ![Lighthouse Results Screenshot](./static/images/lprofilepage.png)
 
+[Back to Index - Table of Contents](#index---table-of-contents)
 ---
 + ### Browser Compatibility
     - Website tested on Chrome, Firefox, and Safari.
 
 ---
-
+[Back to Index - Table of Contents](#index---table-of-contents)
 ## **Deployment**
 ------------
 
@@ -1073,6 +1078,7 @@ To address this, further optimizations such as compressing image sizes or implem
     python manage.py migrate
     ```
 ---
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 ### **Project Summary**
 
@@ -1103,8 +1109,7 @@ To address this, further optimizations such as compressing image sizes or implem
 - **README Documentation**: The README is well-structured, covering project purpose, features, database schema, testing procedures, and user instructions.
 
 ---
-
-### **How Dewi's Blooms Excels**
+[Back to Index - Table of Contents](#index---table-of-contents)
 
 #### **UX Design and Accessibility**
 - The website is fully responsive and accessible, with clear navigation and intuitive design elements. Users can browse products, manage their profiles, and complete purchases easily.
@@ -1119,13 +1124,14 @@ To address this, further optimizations such as compressing image sizes or implem
 - Dewi's Blooms caters to a real-world need for online florist services, allowing users to order flowers for specific occasions. The project addresses user needs by integrating reminders for special dates and personalized shopping experiences.
 
 #### **Code Quality and Organization**
-- The code adheres to PEP-8 standards, and the file structure is logical and consistent. Reusable components and Django conventions are followed throughout.
+- The code adheres to PEP-8 standards although some lines had to be kept long as it was causing some linting errors that I could not resolve, and the file structure is logical and consistent. Reusable components and Django conventions are followed throughout.
 
 ---
 
 ### **Challenges and Decisions**
 While prioritizing image quality to showcase products effectively, some compromises were made on performance. High-quality images are crucial for an e-commerce florist, as customers rely heavily on visuals to make purchasing decisions. Measures to improve performance, such as optimizing image sizes, are under consideration for future iterations.
 
+[Back to Index - Table of Contents](#index---table-of-contents)
 ---
 ### **Credits**
 
@@ -1179,6 +1185,47 @@ Special thanks to mentors and peers for feedback and guidance during this projec
 
 ### **Images**
 Product images sourced from [Unsplash](https://unsplash.com/) and [Pexels](https://www.pexels.com/).
+Image reference
+Photo by Thomas AE on Unsplash 
+Photo by Thomas AE on Unsplash 
+Photo by Edward Cisneros on Unsplash 
+Photo by Beatriz Pérez Moya on Unsplash 
+Photo by Lena Taranenko on Unsplash 
+Photo by Олег Мороз on Unsplash 
+Photo by Komarov Egor 🇺🇦 on Unsplash 
+Photo by Carrie Beth Williams on Unsplash 
+Photo by Felicity Mikellides on Unsplash 
+Photo by Arno Senoner on Unsplash 
+Photo by Milo Rossi on Unsplash 
+Photo by Larisa Birta on Unsplash 
+Photo by Veronika Jorjobert on Unsplash 
+Photo by Chris Lutke on Unsplash 
+Photo by Alsu Vershinina on Unsplash 
+Photo by Alexa Soh on Unsplash 
+Photo by Zoe Schaeffer on Unsplash 
+Photo by Elana Selvig on Unsplash 
+Photo by Kelly Sikkema on Unsplash 
+Photo by Zoe Schaeffer on Unsplash 
+Photo by Nika Benedictova on Unsplash 
+Photo by Manel & Sean on Unsplash 
+Photo by Danish Ali on Unsplash 
+Photo by Amelia Cui on Unsplash 
+Photo by Raspopova Marina on Unsplash 
+Photo by Mylie Grace on Unsplash 
+Photo by Iryna Marienko on Unsplash 
+Photo by Alex Lvrs on Unsplash 
+Photo by Hannah Olinger on Unsplash 
+Photo by Carolina Gallon Londono on Unsplash 
+Photo by Dei R. on Unsplash 
+Photo by Natalie Kinnear on Unsplash 
+Photo by Silvia Rossana Garavaglia on Unsplash 
+Photo by Tristan Gevaux on Unsplash 
+Photo by Chris Lutke on Unsplash 
+Photo by Natalia Trofimova on Unsplash 
+Photo by Tina Park on Unsplash 
+Photo by Mieke Campbell on Unsplash 
+Photo by Jack Swords on Unsplash 
+
 
 ---
 
